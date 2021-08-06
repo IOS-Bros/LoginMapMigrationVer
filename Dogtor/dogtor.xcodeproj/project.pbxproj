@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D5F826B3C476008C42BC /* AppDelegate.swift */; };
+		0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D5FA26B3C476008C42BC /* SceneDelegate.swift */; };
+		0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D5FC26B3C476008C42BC /* ViewController.swift */; };
+		0404D60026B3C476008C42BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D5FE26B3C476008C42BC /* Main.storyboard */; };
+		0404D60226B3C478008C42BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60126B3C478008C42BC /* Assets.xcassets */; };
+		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
+		041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */; };
+		04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6626B90B75002EE7BE /* CheckLoginModel.swift */; };
+		04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6926B91F89002EE7BE /* UserDBModel.swift */; };
+		04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */; };
+		04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166026B7E40400C7CEF9 /* LoginViewController.swift */; };
+		04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */; };
+		04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */; };
+		1F9D145526BB939100F22C6D /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145426BB939100F22C6D /* AddPetViewController.swift */; };
+		1F9D145726BC236D00F22C6D /* PetInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145626BC236D00F22C6D /* PetInsertModel.swift */; };
+		1F9D145926BC2C1300F22C6D /* CheckPetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */; };
+		1F9D145B26BC2F0200F22C6D /* PetDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */; };
+		1F9D145D26BCDEAF00F22C6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145C26BCDEAF00F22C6D /* MapViewController.swift */; };
+		1F9D145F26BCDEF800F22C6D /* MapQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */; };
+		1F9D146126BCDF2E00F22C6D /* MapDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */; };
+		1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */; };
+		8293F1F8D197126AF6D9F3D0 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0404D5F526B3C476008C42BC /* dogtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dogtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0404D5F826B3C476008C42BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0404D5FA26B3C476008C42BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0404D5FC26B3C476008C42BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0404D5FF26B3C476008C42BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0404D60126B3C478008C42BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0404D60426B3C478008C42BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0404D60626B3C478008C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicNameModel.swift; sourceTree = "<group>"; };
+		04361D6626B90B75002EE7BE /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
+		04361D6926B91F89002EE7BE /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
+		04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertModel.swift; sourceTree = "<group>"; };
+		04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewController.swift; sourceTree = "<group>"; };
+		1F9D145426BB939100F22C6D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		1F9D145626BC236D00F22C6D /* PetInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInsertModel.swift; sourceTree = "<group>"; };
+		1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPetInfoModel.swift; sourceTree = "<group>"; };
+		1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDBModel.swift; sourceTree = "<group>"; };
+		1F9D145C26BCDEAF00F22C6D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQueryModel.swift; sourceTree = "<group>"; };
+		1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDBModel.swift; sourceTree = "<group>"; };
+		1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
+		5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
+		68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0404D5F226B3C476008C42BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8293F1F8D197126AF6D9F3D0 /* Pods_dogtor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0404D5EC26B3C476008C42BC = {
+			isa = PBXGroup;
+			children = (
+				0404D5F726B3C476008C42BC /* dogtor */,
+				0404D5F626B3C476008C42BC /* Products */,
+				F8E37A1A6B94A434AB822657 /* Pods */,
+				5E586D70A70B5F4F7032D7FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0404D5F626B3C476008C42BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0404D5F526B3C476008C42BC /* dogtor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0404D5F726B3C476008C42BC /* dogtor */ = {
+			isa = PBXGroup;
+			children = (
+				0404D5F826B3C476008C42BC /* AppDelegate.swift */,
+				0404D5FA26B3C476008C42BC /* SceneDelegate.swift */,
+				0404D5FC26B3C476008C42BC /* ViewController.swift */,
+				0404D5FE26B3C476008C42BC /* Main.storyboard */,
+				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
+				04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */,
+				0404D60126B3C478008C42BC /* Assets.xcassets */,
+				0404D60326B3C478008C42BC /* LaunchScreen.storyboard */,
+				0404D60626B3C478008C42BC /* Info.plist */,
+				04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */,
+				04361D6626B90B75002EE7BE /* CheckLoginModel.swift */,
+				04361D6926B91F89002EE7BE /* UserDBModel.swift */,
+				04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */,
+				041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */,
+				1F9D145426BB939100F22C6D /* AddPetViewController.swift */,
+				1F9D145626BC236D00F22C6D /* PetInsertModel.swift */,
+				1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */,
+				1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */,
+				1F9D145C26BCDEAF00F22C6D /* MapViewController.swift */,
+				1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */,
+				1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */,
+				1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */,
+			);
+			path = dogtor;
+			sourceTree = "<group>";
+		};
+		5E586D70A70B5F4F7032D7FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8E37A1A6B94A434AB822657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */,
+				AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0404D5F426B3C476008C42BC /* dogtor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0404D60926B3C478008C42BC /* Build configuration list for PBXNativeTarget "dogtor" */;
+			buildPhases = (
+				25570B327C212ED5E4FE0781 /* [CP] Check Pods Manifest.lock */,
+				0404D5F126B3C476008C42BC /* Sources */,
+				0404D5F226B3C476008C42BC /* Frameworks */,
+				0404D5F326B3C476008C42BC /* Resources */,
+				E8EED91547AA07C2CB3092BB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dogtor;
+			productName = dogtor;
+			productReference = 0404D5F526B3C476008C42BC /* dogtor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0404D5ED26B3C476008C42BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					0404D5F426B3C476008C42BC = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 0404D5F026B3C476008C42BC /* Build configuration list for PBXProject "dogtor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0404D5EC26B3C476008C42BC;
+			productRefGroup = 0404D5F626B3C476008C42BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0404D5F426B3C476008C42BC /* dogtor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0404D5F326B3C476008C42BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */,
+				0404D60226B3C478008C42BC /* Assets.xcassets in Resources */,
+				0404D60026B3C476008C42BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25570B327C212ED5E4FE0781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dogtor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8EED91547AA07C2CB3092BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0404D5F126B3C476008C42BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
+				1F9D145526BB939100F22C6D /* AddPetViewController.swift in Sources */,
+				1F9D146126BCDF2E00F22C6D /* MapDBModel.swift in Sources */,
+				04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */,
+				1F9D145F26BCDEF800F22C6D /* MapQueryModel.swift in Sources */,
+				04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */,
+				04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */,
+				1F9D145926BC2C1300F22C6D /* CheckPetInfoModel.swift in Sources */,
+				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
+				1F9D145726BC236D00F22C6D /* PetInsertModel.swift in Sources */,
+				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
+				04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */,
+				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
+				041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */,
+				1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */,
+				04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */,
+				1F9D145D26BCDEAF00F22C6D /* MapViewController.swift in Sources */,
+				1F9D145B26BC2F0200F22C6D /* PetDBModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0404D5FE26B3C476008C42BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0404D5FF26B3C476008C42BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0404D60326B3C478008C42BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0404D60426B3C478008C42BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0404D60726B3C478008C42BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0404D60826B3C478008C42BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0404D60A26B3C478008C42BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = dogtor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlec.dogtor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0404D60B26B3C478008C42BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = dogtor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlec.dogtor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0404D5F026B3C476008C42BC /* Build configuration list for PBXProject "dogtor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404D60726B3C478008C42BC /* Debug */,
+				0404D60826B3C478008C42BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0404D60926B3C478008C42BC /* Build configuration list for PBXNativeTarget "dogtor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404D60A26B3C478008C42BC /* Debug */,
+				0404D60B26B3C478008C42BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0404D5ED26B3C476008C42BC /* Project object */;
+}
