@@ -8,8 +8,8 @@
 import Foundation
 
 // 값을 다른곳으로 줄때 쓰는것
-protocol CheckLoginModelProtocol : AnyObject {
-    func itemDownloaded(items : NSMutableArray)
+protocol CheckLoginModelProtocol : class {
+    func checkLogin(items : NSMutableArray)
 }
 
 class CheckLoginModel : NSObject {
@@ -58,7 +58,7 @@ class CheckLoginModel : NSObject {
         }
         // TableViewController 가 다른 일을 할때를 대비하여 async를 사용한다.
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownloaded(items: locations)
+            self.delegate.checkLogin(items: locations)
         })
     }
     

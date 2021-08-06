@@ -1,28 +1,24 @@
 //
-//  CheckNicNameModel.swift
+//  CheckUserModel.swift
 //  dogtor
 //
-//  Created by 예쁘고 비싼 thㅡ레기 on 2021/08/05.
+//  Created by 예쁘고 비싼 thㅡ레기 on 2021/08/06.
 //
 
 import Foundation
 
-// 값을 다른곳으로 줄때 쓰는것
-protocol CheckNicNameModelProtocol : class {
-    func itemDownloaded(items : NSMutableArray)
+protocol CheckUserModelProtocol : NSObject {
+    func checkUser(items : NSMutableArray)
 }
 
-class CheckNicNameModel : NSObject {
+class CheckUserModel : NSObject {
    
-    var delegate : CheckNicNameModelProtocol!
+    var delegate : CheckUserModelProtocol!
     
     
-    func checkUser(_ nickName : String) {
-        var urlPath = "http://\(myURL):8080/dogtor/check_nickName.jsp?nickName=\(nickName)"
-        print(urlPath)
-        
-        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+    func checkUser(_ email : String) {
+        let urlPath = "http://\(myURL):8080/dogtor/check_user.jsp?email=\(email)"
+        print("CheckUserModelProtocol : \(urlPath)")
         let url : URL = URL(string: urlPath)!
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url) {(data, response, error) in
@@ -52,16 +48,16 @@ class CheckNicNameModel : NSObject {
         for i in 0..<jsonResult.count {
             print("gma?")
             jsonElement = jsonResult[i] as! NSDictionary
-            print("dho?")
-            if let nickName = jsonElement["nickName"] as? String {
-                print("Model : \(nickName)")
-                let query = UserDBModel(nickName: nickName)
+            if let email = jsonElement["email"] as? String,
+               let API = jsonElement["API"] as? String {
+                print("Model : \(email)")
+                let query = UserDBModel(API: API, email: email)
                 locations.add(query)
             }
         }
         // TableViewController 가 다른 일을 할때를 대비하여 async를 사용한다.
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownloaded(items: locations)
+            self.delegate.checkUser(items: locations)
         })
     }
     
