@@ -7,22 +7,21 @@
 
 import UIKit
 
-
-
-
-class MyPageViewController: UIViewController{
+class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var dangView: UICollectionView!
     
     @IBOutlet weak var myPageImage: UIImageView!
     @IBOutlet weak var myPageNickName: UILabel!
-    
 
     var receiveUserImageURL : URL?
-        
     
     var myDogName = Array<String>()
     var myDogImage = Array<String>()
+    var myDogId = Array<String>()
+    var myDogSpecies = Array<String>()
+    var myDogGender = Array<String>()
+    var myDogAge = Array<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +32,17 @@ class MyPageViewController: UIViewController{
         
         getPetInfo("ohyj0906@gmail.com")
         
-            
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        getPetInfo("ohyj0906@gmail.com")
+//        super.viewWillAppear(animated)
+//        let checkPetInfo = CheckPetInfoModel()
+//        checkPetInfo.checkPet("ohyj0906@gmail.com")
+//        checkPetInfo.delegate = self
+//        dangView.reloadData()
+    }
     
-
-
     func getPetInfo(_ email: String){
 
         let checkPetInfo = CheckPetInfoModel()
@@ -56,12 +60,25 @@ extension MyPageViewController : CheckPetInfoModelProtocol {
             let petDB: PetDBModel = items[i] as! PetDBModel
             myDogName.append(petDB.PetName!)
             myDogImage.append(petDB.PetImage!)
+            myDogId.append(petDB.PetId!)
+            myDogSpecies.append(petDB.PetSpecies!)
+            myDogGender.append(petDB.PetGender!)
+            myDogAge.append(petDB.PetAge!)
+            
         }
         
         print(myDogName.count)
         
         DispatchQueue.main.async {
            self.dangView.reloadData()
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dangModify"{
+            let cell = sender as! MyPageCollectionViewCell
+            let indexPath = self.dangView.indexPath(for: cell)
+            let modifyView = segue.destination as! ModifyPetViewController
+            modifyView.receiveInfo(myDogName[indexPath!.row])
         }
     }
 }
@@ -84,57 +101,111 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
-        
-        
         if indexPath.row == myDogName.count{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogAddCell", for: indexPath) as? UICollectionViewCell else {
                 
                 return UICollectionViewCell()
             }
+            
             cell.backgroundColor = UIColor.lightGray
             cell.layer.borderWidth = 1.0
             cell.layer.borderColor = UIColor.darkGray.cgColor
             cell.layer.cornerRadius = 4
             
-            
             return cell
         }else{
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? UICollectionViewCell else {
-                
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? MyPageCollectionViewCell else {
+               
                 return UICollectionViewCell()
                 
             }
             
-            let title = UILabel(frame: CGRect(x: 0, y: cell.bounds.size.height - 50 , width: cell.bounds.size.width, height: 50))
-            title.text = myDogName[indexPath.row]
-            title.textAlignment = .center
-            cell.contentView.addSubview(title)
+//            let title = UILabel(frame: CGRect(x: 0, y: cell.bounds.size.height - 50 , width: cell.bounds.size.width, height: 50))
+//            title.text = myDogName[indexPath.row]
+//            title.textAlignment = .center
+//            cell.contentView.addSubview(title)
+            cell.lblDangName.text = myDogName[indexPath.row]
             cell.backgroundColor = UIColor.white
             
             cell.layer.borderWidth = 1.0
             cell.layer.borderColor = UIColor.darkGray.cgColor
             cell.layer.cornerRadius = 4
             
-            
-            
-       
-
-            
-            
+            // LongPressGesture cell
+            let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+            lpgr.minimumPressDuration = 0.3
+            lpgr.delaysTouchesBegan = true
+            cell.contentView.addGestureRecognizer(lpgr)
+            cell.addGestureRecognizer(lpgr)
+           
 //            cell.backgroundView = UIImageView(image: data)
-            
-            
-
             
             return cell
         }
         
     }
+
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        guard gestureReconizer.state != .began else { return }
+        let point = gestureReconizer.location(in: self.dangView)
+        let indexPath = self.dangView.indexPathForItem(at: point)
+        if let index = indexPath{
+            print(index.row)
+            let testAlert = UIAlertController(title: "My Dog", message: "\(myDogName[index.row])", preferredStyle: .actionSheet)
+            
+            // AlertAction
+            let actionDefault = UIAlertAction(title: "댕댕이 바꾸기", style: .default, handler: {ACTION in
+                self.dangView.register(MyPageViewController.self, forCellWithReuseIdentifier: "cell")
+//                self.performSegue(withIdentifier: "dangModify", sender: index.row)
+                self.performSegue(withIdentifier: "dangModify", sender: self)
+            })
+            let actionDestructive = UIAlertAction(title: "댕댕이 지우기", style: .destructive, handler: {ACTION in
+                // Controller 초기화
+                let testAlert = UIAlertController(title: "My Dog", message: "정말.. 지우실건가요?", preferredStyle: .alert)
+
+                // AlertAction
+                let actionDefault = UIAlertAction(title: "네..ㅜㅜ", style: .default, handler: {ACTION in
+                    let deleteModel = PetDeleteModel()
+                    let result = deleteModel.deletePet(petId: self.myDogId[index.row])
+                    
+                    if result{
+                        let resultAlert = UIAlertController(title: "완료", message: "댕댕아 잘가!", preferredStyle: .alert)
+                        let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+                            self.viewWillAppear(true)
+                        })
+                        resultAlert.addAction(onAction)
+                        self.present(resultAlert, animated: true, completion: nil)
+                    }else{
+                        let resultAlert = UIAlertController(title: "실패", message: "에러가 발생 되었습니다!", preferredStyle: .alert)
+                        let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+                            self.navigationController?.popViewController(animated: true)
+                        })
+                        resultAlert.addAction(onAction)
+                        self.present(resultAlert, animated: true, completion: nil)
+                    }
+                })
+                let actionCancel = UIAlertAction(title: "아니욥!!", style: .cancel, handler: nil)
+                
+                // Controller와 Action결합
+                testAlert.addAction(actionDefault)
+                testAlert.addAction(actionCancel)
+                
+                // 화면 띄우기
+                self.present(testAlert, animated: true, completion: nil)
+            })
+            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            // Controller와 Action결합
+            testAlert.addAction(actionDefault)
+            testAlert.addAction(actionDestructive)
+            testAlert.addAction(actionCancel)
+            
+            // 화면 띄우기
+            present(testAlert, animated: true, completion: nil)
+        }
+        else{
+            print("Could not find index path")
+        }
+    }
 }
-
-
-
-
-
-

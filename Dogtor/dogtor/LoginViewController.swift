@@ -11,7 +11,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKTalk
 
-let myURL = "127.0.0.1"
+let myURL = "172.30.1.28"
 
 
 class LoginViewController: UIViewController {

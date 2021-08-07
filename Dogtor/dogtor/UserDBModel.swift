@@ -13,7 +13,6 @@ class UserDBModel : NSObject {
     var email : String?
     var image : String?
     var nickName : String?
-    
     var imageURL : URL?
     
     override init() {
