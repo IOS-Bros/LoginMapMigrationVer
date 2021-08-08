@@ -9,7 +9,6 @@ import UIKit
 
 class AddPetViewController: UIViewController {
 
-    
     @IBOutlet weak var dangImage: UIImageView!
     var imageURL: URL?
     let picker = UIImagePickerController()

@@ -856,7 +856,6 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="lblDangName" destination="bBH-Ns-Gwc" id="gri-Hn-cfE"/>
-                                            <outletCollection property="gestureRecognizers" destination="Dum-MK-RHx" appends="YES" id="BQb-bR-xio"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogAddCell" id="tmK-D9-Xfq">
@@ -958,7 +957,7 @@
                         <outlet property="dangView" destination="dJn-bK-NjD" id="i1L-pz-BJJ"/>
                         <outlet property="myPageImage" destination="b4G-fO-lRl" id="AZD-yJ-6lU"/>
                         <outlet property="myPageNickName" destination="3YC-1J-uAo" id="tSi-kx-Fgs"/>
-                        <segue destination="ene-wz-KPe" kind="push" identifier="dangModify" id="1m2-VO-lSM"/>
+                        <segue destination="ene-wz-KPe" kind="push" identifier="dangModify" id="Hsm-RX-3gH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPY-cG-2ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1012,7 +1011,7 @@
                                 <rect key="frame" x="100" y="559.5" width="294" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TVs-fk-CEZ">
                                 <rect key="frame" x="227" y="491.5" width="158" height="32"/>
@@ -1038,8 +1037,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cgy-9i-WbK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="2Hh-Dd-v5g"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="2Hh-Dd-v5g">
+                            <connections>
+                                <action selector="ModifyDang:" destination="ene-wz-KPe" id="ZAn-a1-yja"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivMyDog" destination="KbS-E0-G3M" id="urG-Dt-5u2"/>
+                        <outlet property="scMyDogGender" destination="TVs-fk-CEZ" id="ju5-lN-5mg"/>
+                        <outlet property="tfMyDogAge" destination="X25-lp-tIb" id="39i-TL-nU3"/>
+                        <outlet property="tfMyDogName" destination="321-YG-Jxw" id="eWQ-xS-1gL"/>
+                        <outlet property="tfMyDogSpec" destination="0PN-lU-qLj" id="hPP-wM-5QA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2g-xI-FeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1091,7 +1101,7 @@
                                 <rect key="frame" x="100" y="550" width="294" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-1k-Pxl">
                                 <rect key="frame" x="227" y="482" width="158" height="32"/>

@@ -31,6 +31,8 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         // Do any additional setup after loading the view
         
         getPetInfo("ohyj0906@gmail.com")
+//        dangView.delegate = self
+//        dangView.dataSource = self
         
     }
     
@@ -75,10 +77,10 @@ extension MyPageViewController : CheckPetInfoModelProtocol {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dangModify"{
-            let cell = sender as! MyPageCollectionViewCell
-            let indexPath = self.dangView.indexPath(for: cell)
+//            let cell = sender as! MyPageCollectionViewCell
+//            let indexPath = self.dangView.indexPath(for: cell)
             let modifyView = segue.destination as! ModifyPetViewController
-            modifyView.receiveInfo(myDogName[indexPath!.row])
+            modifyView.receiveInfo(myDogId[sender as! Int], myDogName[sender as! Int], myDogImage[sender as! Int], myDogSpecies[sender as! Int], myDogGender[sender as! Int], myDogAge[sender as! Int])
         }
     }
 }
@@ -156,9 +158,10 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
             
             // AlertAction
             let actionDefault = UIAlertAction(title: "댕댕이 바꾸기", style: .default, handler: {ACTION in
-                self.dangView.register(MyPageViewController.self, forCellWithReuseIdentifier: "cell")
-//                self.performSegue(withIdentifier: "dangModify", sender: index.row)
-                self.performSegue(withIdentifier: "dangModify", sender: self)
+//                self.dangView.register(UICollectionViewCell.self,forCellWithReuseIdentifier:"cell")
+//                self.dangView.register(MyPageViewController.self, forCellWithReuseIdentifier: "cell")
+                self.performSegue(withIdentifier: "dangModify", sender: index.row)
+//                self.performSegue(withIdentifier: "dangModify", sender: self)
             })
             let actionDestructive = UIAlertAction(title: "댕댕이 지우기", style: .destructive, handler: {ACTION in
                 // Controller 초기화
