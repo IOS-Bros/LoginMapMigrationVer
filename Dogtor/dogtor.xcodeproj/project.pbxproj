@@ -14,6 +14,8 @@
 		0404D60226B3C478008C42BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60126B3C478008C42BC /* Assets.xcassets */; };
 		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
 		041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */; };
+		042A80EF26BD28C7009BDCE8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A80EE26BD28C7009BDCE8 /* StartViewController.swift */; };
+		042A80F226BD33F8009BDCE8 /* CheckUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */; };
 		04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6626B90B75002EE7BE /* CheckLoginModel.swift */; };
 		04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6926B91F89002EE7BE /* UserDBModel.swift */; };
 		04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */; };
@@ -28,7 +30,7 @@
 		1F9D145F26BCDEF800F22C6D /* MapQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */; };
 		1F9D146126BCDF2E00F22C6D /* MapDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */; };
 		1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */; };
-		8293F1F8D197126AF6D9F3D0 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */; };
+		4A010229F567DD2D2D47E5FC /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,12 +43,15 @@
 		0404D60426B3C478008C42BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0404D60626B3C478008C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicNameModel.swift; sourceTree = "<group>"; };
+		042A80EE26BD28C7009BDCE8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserModel.swift; sourceTree = "<group>"; };
 		04361D6626B90B75002EE7BE /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
 		04361D6926B91F89002EE7BE /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
 		04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertModel.swift; sourceTree = "<group>"; };
 		04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewController.swift; sourceTree = "<group>"; };
+		05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 		1F9D145426BB939100F22C6D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		1F9D145626BC236D00F22C6D /* PetInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInsertModel.swift; sourceTree = "<group>"; };
 		1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPetInfoModel.swift; sourceTree = "<group>"; };
@@ -55,9 +60,8 @@
 		1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQueryModel.swift; sourceTree = "<group>"; };
 		1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDBModel.swift; sourceTree = "<group>"; };
 		1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
-		5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
-		68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
+		6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
+		7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8293F1F8D197126AF6D9F3D0 /* Pods_dogtor.framework in Frameworks */,
+				4A010229F567DD2D2D47E5FC /* Pods_dogtor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +82,7 @@
 				0404D5F726B3C476008C42BC /* dogtor */,
 				0404D5F626B3C476008C42BC /* Products */,
 				F8E37A1A6B94A434AB822657 /* Pods */,
-				5E586D70A70B5F4F7032D7FA /* Frameworks */,
+				153511B83F25E5A53B696EBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,14 +119,16 @@
 				1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */,
 				1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */,
 				1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */,
+				042A80EE26BD28C7009BDCE8 /* StartViewController.swift */,
+				042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */,
 			);
 			path = dogtor;
 			sourceTree = "<group>";
 		};
-		5E586D70A70B5F4F7032D7FA /* Frameworks */ = {
+		153511B83F25E5A53B696EBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				68C5365A5DFFAE36A5D83FA9 /* Pods_dogtor.framework */,
+				7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,8 +136,8 @@
 		F8E37A1A6B94A434AB822657 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */,
-				AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */,
+				6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */,
+				05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -143,11 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0404D60926B3C478008C42BC /* Build configuration list for PBXNativeTarget "dogtor" */;
 			buildPhases = (
-				25570B327C212ED5E4FE0781 /* [CP] Check Pods Manifest.lock */,
+				F775A8CA7A7D94BB2E7D3932 /* [CP] Check Pods Manifest.lock */,
 				0404D5F126B3C476008C42BC /* Sources */,
 				0404D5F226B3C476008C42BC /* Frameworks */,
 				0404D5F326B3C476008C42BC /* Resources */,
-				E8EED91547AA07C2CB3092BB /* [CP] Embed Pods Frameworks */,
+				6A1F226FF25645BA9B537DE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,7 +210,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25570B327C212ED5E4FE0781 /* [CP] Check Pods Manifest.lock */ = {
+		6A1F226FF25645BA9B537DE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F775A8CA7A7D94BB2E7D3932 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,23 +247,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8EED91547AA07C2CB3092BB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -263,7 +269,9 @@
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
 				04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
+				042A80F226BD33F8009BDCE8 /* CheckUserModel.swift in Sources */,
 				041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */,
+				042A80EF26BD28C7009BDCE8 /* StartViewController.swift in Sources */,
 				1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */,
 				04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */,
 				1F9D145D26BCDEAF00F22C6D /* MapViewController.swift in Sources */,
@@ -411,7 +419,7 @@
 		};
 		0404D60A26B3C478008C42BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5788F2B37E7F1015EC865CF4 /* Pods-dogtor.debug.xcconfig */;
+			baseConfigurationReference = 6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,7 +438,7 @@
 		};
 		0404D60B26B3C478008C42BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC869BC93EDEF348B48A6595 /* Pods-dogtor.release.xcconfig */;
+			baseConfigurationReference = 05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

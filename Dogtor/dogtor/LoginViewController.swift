@@ -15,7 +15,6 @@ let myURL = "127.0.0.1"
 
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var imgTest: UIImageView!
     
     var API : String = ""
     var userEmail : String = ""
@@ -24,9 +23,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let userEmail = UserDefaults.standard.string(forKey: "Email") {
-            performSegue(withIdentifier: "existingLogin", sender: self)
-        }
+//        if let userEmail = UserDefaults.standard.string(forKey: "Email") {
+//            performSegue(withIdentifier: "existingLogin", sender: self)
+//        }
         // Do any additional setup after loading the view.
         
     }
@@ -45,7 +44,7 @@ class LoginViewController: UIViewController {
             self.userImageURL = (user?.profile?.imageURL(withDimension: 100))!
             self.checkLogin(self.userEmail)
             
-            print("checkLogin->btnGoogle : \(self.userEmail)")
+            print("checkLog@objc in->btnGoogle : \(self.userEmail)")
           }
         
     }
@@ -121,7 +120,7 @@ class LoginViewController: UIViewController {
 
 
 extension UIViewController : CheckLoginModelProtocol {
-    func itemDownloaded(items: NSMutableArray) {
+    func checkLogin(items: NSMutableArray) {
         let userDB: UserDBModel = items[0] as! UserDBModel
         UserDefaults.standard.set(userDB.email, forKey: "Email")
         
@@ -129,9 +128,10 @@ extension UIViewController : CheckLoginModelProtocol {
         if userDB.API == "0" {
             performSegue(withIdentifier: "firstLogin", sender: self)
             
-        } else {
-            // 원래있는 유저 Dto 받고//////
-            performSegue(withIdentifier: "existingLogin", sender: self)
         }
+//        else {
+//            // 원래있는 유저 Dto 받고//////
+//            performSegue(withIdentifier: "existingLogin", sender: self)
+//        }
     }
 }
