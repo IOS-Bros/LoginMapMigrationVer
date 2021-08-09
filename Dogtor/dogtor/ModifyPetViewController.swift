@@ -43,7 +43,7 @@ class ModifyPetViewController: UIViewController {
         
         imgPicker.delegate = self
         
-//        scMyDogGender.addTarget(self, action: #selector(segChanged(segCon:)), for: UIControl.Event.valueChanged)
+        scMyDogGender.addTarget(self, action: #selector(segChanged(segCon:)), for: UIControl.Event.valueChanged)
         
         switch receivemyDogGender {
         case "남":
@@ -55,6 +55,11 @@ class ModifyPetViewController: UIViewController {
         default:
             scMyDogGender.selectedSegmentIndex = 0
         }
+        
+        let url = URL(string: "http://\(myURL):8080/dogtor/image/\(receivemyDogImage)")
+        let data = try? Data(contentsOf: url!)
+        ivMyDog.image = UIImage(data: data!)
+        
     }
     
     func openGallery(){
@@ -122,30 +127,31 @@ class ModifyPetViewController: UIViewController {
         
 //        print(imageURL!, petName!, petAge!,  petSpecies! , petGender!)
         
+        var result = ""
         
         let petModifyModel = PetModifyModel()
-        let result = petModifyModel.modifyPet(imageURL!, receivemyDogName, receivemyDogAge, receivemyDogSpecies, receivemyDogGender, receivemyDogId)
-        
-        if result {
-            let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
-
-                self.navigationController?.popViewController(animated: true)
-            })
-
-            resultAlert.addAction(onAction)
-            present(resultAlert, animated: true, completion: nil)
-
-        } else {
-            let resultAlert = UIAlertController(title: "완료", message: "에러가 발생 되었습니다", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
-                self.navigationController?.popViewController(animated: true)
-            })
-
-            resultAlert.addAction(onAction)
-            present(resultAlert, animated: true, completion: nil)
-        }
-        
+        petModifyModel.uploadImageFile(at: imageURL!, petName: receivemyDogName, petAge: receivemyDogAge, petSpecies: receivemyDogSpecies, petGender: receivemyDogGender, petId: receivemyDogId, completionHandler: {_,_ in result})
+//        
+//        if result {
+//            let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
+//            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+//
+//                self.navigationController?.popViewController(animated: true)
+//            })
+//
+//            resultAlert.addAction(onAction)
+//            present(resultAlert, animated: true, completion: nil)
+//
+//        } else {
+//            let resultAlert = UIAlertController(title: "완료", message: "에러가 발생 되었습니다", preferredStyle: .alert)
+//            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+//                self.navigationController?.popViewController(animated: true)
+//            })
+//
+//            resultAlert.addAction(onAction)
+//            present(resultAlert, animated: true, completion: nil)
+//        }
+//        
         
     }
     /*

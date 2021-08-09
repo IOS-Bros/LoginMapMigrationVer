@@ -128,6 +128,9 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
 //            title.textAlignment = .center
 //            cell.contentView.addSubview(title)
             cell.lblDangName.text = myDogName[indexPath.row]
+            let url = URL(string: "http://\(myURL):8080/dogtor/image/\(myDogImage[indexPath.row])")
+            let data = try? Data(contentsOf: url!)
+            cell.ivDangImage.image = UIImage(data: data!)
             cell.backgroundColor = UIColor.white
             
             cell.layer.borderWidth = 1.0

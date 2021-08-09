@@ -1,14 +1,13 @@
 //
-//  PetModifyModel.swift
-//  dogtor
+//  ImageUploadModel.swift
+//  FileUpload_01
 //
-//  Created by SeungYeon on 2021/08/06.
+//  Created by Jasper Oh on 2021/08/08.
 //
 
 import Foundation
 
-
-class PetModifyModel{
+class NewPetInsertModel:NSObject{
                 
     // MARK: Img Upload
     func buildBody(with fileURL: URL, parameters: [String: String]?) -> Data? {
@@ -56,19 +55,19 @@ class PetModifyModel{
         return data
     }
 //    print(imageURL!, petName!, petAge! ,  petSpecies! , petGender!)
-    func uploadImageFile(at filepath: URL , petName: String , petAge : String , petSpecies: String , petGender: String , petId: String ,completionHandler: @escaping(Data?, URLResponse?) -> Void) {
+    func uploadImageFile(at filepath: URL , petName: String , petAge : String , petSpecies: String , petGender: String , userId: String ,completionHandler: @escaping(Data?, URLResponse?) -> Void) {
         
         // 경로를 준비하고
         //let url = URL(string: "\(filepath), ImageUpload.jsp")!
 
-        let url = URL(string: "http://localhost:8080/dogtor/petModify.jsp")!
+        let url = URL(string: "http://localhost:8080/dogtor/petInsert.jsp")!
         
         let parameters = [
             "petName" : "\(petName)",
             "petAge" : "\(petAge)",
             "petSpecies" : "\(petSpecies)",
             "petGender" : "\(petGender)",
-            "petId" : "\(petId)"
+            "userId" : "\(userId)"
         ]
 
         // 경로로부터 요청을 생성한다. 이 때 Content-Type 헤더 필드를 변경한다.
@@ -87,34 +86,3 @@ class PetModifyModel{
     }
     
 } // -----
-
-//
-////class JsonModel:NSObject{
-//class PetModifyModel{
-//    var urlPath = "http://\(myURL):8080/dogtor/petModify.jsp"
-//
-//    func modifyPet(_ imageURL : URL, _ petName : String, _ petAge : String, _ petSpecies : String , _ petGender : String , _ petId : String) -> Bool{
-//        var result: Bool = true
-//        let urlAdd = "?imageURL=\(imageURL)&petName=\(petName)&petAge=\(petAge)&petSpecies=\(petSpecies)&petGender=\(petGender)&petId=\(petId)"
-//        urlPath = urlPath + urlAdd
-//
-//        // 한글 url encoding
-//        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-//
-//        let url: URL = URL(string: urlPath)!
-//        let defaultSesstion = URLSession(configuration: URLSessionConfiguration.default)
-//        let task = defaultSesstion.dataTask(with: url){(data, response, error) in
-//            if error != nil{
-//                print("Failed to update data")
-//                result = false
-//            }else{
-//                print("Data is updated!")
-//                result = true
-//            }
-//
-//        }
-//        task.resume()
-//        return result
-//    }
-//
-//}

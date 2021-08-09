@@ -9,5 +9,6 @@ import UIKit
 
 class MyPageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblDangName: UILabel!
+    @IBOutlet weak var ivDangImage: UIImageView!
     
 }

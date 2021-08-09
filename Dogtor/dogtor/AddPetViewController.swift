@@ -92,38 +92,26 @@ class AddPetViewController: UIViewController {
 
     @IBAction func AddDangInfo(_ sender: UIBarButtonItem) {
         print("insert DangInfo")
-        
+                
         petName = dangName.text
         petSpecies = dangSpecies.text
-        
         petAge = dangAge.text
         
         print(imageURL!, petName!, petAge! ,  petSpecies! , petGender!)
         
-        
-        let petInsertModel = PetInsertModel()
-        let result = petInsertModel.insertPet(imageURL!, petName!, petAge!, petSpecies!, petGender!, "ohyj0906@gmail.com")
-        
-        if result {
-            let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+        let newPetInsertModel = NewPetInsertModel()
+//        newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: "ohyj0906@gmail.com" ,completionHandler: {_,_ in print("Upload Success")})
+        newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: "ohyj0906@gmail.com", completionHandler: {_,_ in
+                print("Upload Success")
+        })
+        let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
+        let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
 
-                self.navigationController?.popViewController(animated: true)
-            })
+            self.navigationController?.popViewController(animated: true)
+        })
 
-            resultAlert.addAction(onAction)
-            present(resultAlert, animated: true, completion: nil)
-
-        } else {
-            let resultAlert = UIAlertController(title: "완료", message: "에러가 발생 되었습니다", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
-                self.navigationController?.popViewController(animated: true)
-            })
-
-            resultAlert.addAction(onAction)
-            present(resultAlert, animated: true, completion: nil)
-        }
-        
+        resultAlert.addAction(onAction)
+        present(resultAlert, animated: true, completion: nil)
         
     }
     
