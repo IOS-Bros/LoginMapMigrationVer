@@ -768,7 +768,7 @@
         <!--마이페이지-->
         <scene sceneID="Xlc-E9-1aM">
             <objects>
-                <viewController id="mgG-vN-lh2" customClass="MyPageViewController" customModule="dogtor" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myPageVC" id="mgG-vN-lh2" customClass="MyPageViewController" customModule="dogtor" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qfa-4i-cld">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -946,7 +946,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPY-cG-2ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2259" y="2447"/>
+            <point key="canvasLocation" x="2257.971014492754" y="2446.875"/>
         </scene>
         <!--댕댕추가-->
         <scene sceneID="aGM-XN-QUn">

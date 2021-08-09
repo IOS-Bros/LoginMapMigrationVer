@@ -46,12 +46,15 @@ class CheckUserModel : NSObject {
         let locations = NSMutableArray()
         
         for i in 0..<jsonResult.count {
-            print("gma?")
+            print("CheckUserModel - for")
             jsonElement = jsonResult[i] as! NSDictionary
-            if let email = jsonElement["email"] as? String,
-               let API = jsonElement["API"] as? String {
-                print("Model : \(email)")
-                let query = UserDBModel(API: API, email: email)
+            if let jsonEmail = jsonElement["email"] as? String,
+               let jsonAPI = jsonElement["API"] as? String,
+               let jsonImage = jsonElement["image"] as? String,
+               let jsonNickName = jsonElement["nickName"] as? String {
+                let jsonImageURL = URL(string: jsonImage)
+                print("Model : \(jsonEmail)")
+                let query = UserDBModel(API: jsonAPI, email: jsonEmail, image: jsonImageURL!, nickName: jsonNickName)
                 locations.add(query)
             }
         }

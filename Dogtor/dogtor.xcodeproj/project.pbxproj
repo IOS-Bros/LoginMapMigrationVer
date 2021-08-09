@@ -16,6 +16,7 @@
 		041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */; };
 		042A80EF26BD28C7009BDCE8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A80EE26BD28C7009BDCE8 /* StartViewController.swift */; };
 		042A80F226BD33F8009BDCE8 /* CheckUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */; };
+		042A80F826BD7C7E009BDCE8 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A80F726BD7C7E009BDCE8 /* Share.swift */; };
 		04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6626B90B75002EE7BE /* CheckLoginModel.swift */; };
 		04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6926B91F89002EE7BE /* UserDBModel.swift */; };
 		04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */; };
@@ -45,6 +46,7 @@
 		041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicNameModel.swift; sourceTree = "<group>"; };
 		042A80EE26BD28C7009BDCE8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserModel.swift; sourceTree = "<group>"; };
+		042A80F726BD7C7E009BDCE8 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		04361D6626B90B75002EE7BE /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
 		04361D6926B91F89002EE7BE /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
 		04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -101,28 +103,53 @@
 				0404D5FA26B3C476008C42BC /* SceneDelegate.swift */,
 				0404D5FC26B3C476008C42BC /* ViewController.swift */,
 				0404D5FE26B3C476008C42BC /* Main.storyboard */,
-				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
-				04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */,
+				042A80F626BD7C67009BDCE8 /* Share */,
+				042A80F426BD7C1B009BDCE8 /* ViewController */,
 				0404D60126B3C478008C42BC /* Assets.xcassets */,
+				042A80F526BD7C35009BDCE8 /* Model */,
 				0404D60326B3C478008C42BC /* LaunchScreen.storyboard */,
 				0404D60626B3C478008C42BC /* Info.plist */,
+			);
+			path = dogtor;
+			sourceTree = "<group>";
+		};
+		042A80F426BD7C1B009BDCE8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
+				04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */,
+				04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */,
+				1F9D145426BB939100F22C6D /* AddPetViewController.swift */,
+				1F9D145C26BCDEAF00F22C6D /* MapViewController.swift */,
+				1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */,
+				042A80EE26BD28C7009BDCE8 /* StartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		042A80F526BD7C35009BDCE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */,
 				04361D6626B90B75002EE7BE /* CheckLoginModel.swift */,
 				04361D6926B91F89002EE7BE /* UserDBModel.swift */,
-				04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */,
 				041480AE26BB8C3A00B74D88 /* CheckNicNameModel.swift */,
-				1F9D145426BB939100F22C6D /* AddPetViewController.swift */,
 				1F9D145626BC236D00F22C6D /* PetInsertModel.swift */,
 				1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */,
 				1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */,
-				1F9D145C26BCDEAF00F22C6D /* MapViewController.swift */,
 				1F9D145E26BCDEF800F22C6D /* MapQueryModel.swift */,
 				1F9D146026BCDF2E00F22C6D /* MapDBModel.swift */,
-				1F9D146226BCE02800F22C6D /* MapDetailViewController.swift */,
-				042A80EE26BD28C7009BDCE8 /* StartViewController.swift */,
 				042A80F126BD33F8009BDCE8 /* CheckUserModel.swift */,
 			);
-			path = dogtor;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		042A80F626BD7C67009BDCE8 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				042A80F726BD7C7E009BDCE8 /* Share.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		153511B83F25E5A53B696EBC /* Frameworks */ = {
@@ -272,6 +299,7 @@
 				042A80F226BD33F8009BDCE8 /* CheckUserModel.swift in Sources */,
 				041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */,
 				042A80EF26BD28C7009BDCE8 /* StartViewController.swift in Sources */,
+				042A80F826BD7C7E009BDCE8 /* Share.swift in Sources */,
 				1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */,
 				04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */,
 				1F9D145D26BCDEAF00F22C6D /* MapViewController.swift in Sources */,

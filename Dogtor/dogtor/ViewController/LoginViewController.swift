@@ -23,12 +23,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if let userEmail = UserDefaults.standard.string(forKey: "Email") {
-//            performSegue(withIdentifier: "existingLogin", sender: self)
-//        }
-        // Do any additional setup after loading the view.
-        
+
+        print("LoginViewController - UserEmail : \(Share.userEmail)")
     }
+    
+    
     @IBAction func btnGoogle(_ sender: UIButton) {
         
         let signInConfig = GIDConfiguration.init(clientID: "619955076758-7f30hc5sr2ses6ioljsco1uqgat4hbv4.apps.googleusercontent.com")
@@ -37,8 +36,7 @@ class LoginViewController: UIViewController {
             guard error == nil else {
                 return
             }
-  
-//            print("이미지 : \(user?.profile?.imageURL(withDimension: 100))")
+            
             self.API = "Google"
             self.userEmail = (user?.profile!.email)!
             self.userImageURL = (user?.profile?.imageURL(withDimension: 100))!
@@ -92,7 +90,10 @@ class LoginViewController: UIViewController {
             print("prepare : \(API), \(userEmail), \(userImageURL)")
             loginInsertView.receiveUserInfo(API, userEmail, userImageURL!)
         }else{
-            // 원래 있는 유저 Dto 보내주기//////
+            let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "main")
+                mainVC?.modalPresentationStyle = .fullScreen
+                self.present(mainVC!, animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: false)
         }
     }
     
@@ -122,16 +123,23 @@ class LoginViewController: UIViewController {
 extension UIViewController : CheckLoginModelProtocol {
     func checkLogin(items: NSMutableArray) {
         let userDB: UserDBModel = items[0] as! UserDBModel
-        UserDefaults.standard.set(userDB.email, forKey: "Email")
+        Share.userEmail = userDB.email!
+        Share.userImage = userDB.image!
+        Share.userNickName = userDB.nickName!
         
-        print("CheckLoginModelProtocol : \(userDB.API)")
+        UserDefaults.standard.set(Share.userEmail, forKey: "email")
+        UserDefaults.standard.set(Share.userNickName, forKey: "nickname")
+        UserDefaults.standard.set(Share.userImage, forKey: "image")
+        
+        print("CheckLoginModelProtocol : \(userDB.email)")
         if userDB.API == "0" {
             performSegue(withIdentifier: "firstLogin", sender: self)
             
+        } else {
+            let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "main")
+                mainVC?.modalPresentationStyle = .fullScreen
+                self.present(mainVC!, animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: false)
         }
-//        else {
-//            // 원래있는 유저 Dto 받고//////
-//            performSegue(withIdentifier: "existingLogin", sender: self)
-//        }
     }
 }

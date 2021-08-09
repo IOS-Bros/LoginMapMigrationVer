@@ -26,15 +26,23 @@ class MyPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("MyPageViewController - UserEmail : \(Share.userEmail)")
 
         print("언제 실행되는거야!!!!5")
         
         // Do any additional setup after loading the view
         
         getPetInfo("ohyj0906@gmail.com")
+        print("MyPageViewController의 닉네임 : \(Share.userNickName)")
         
+        
+        do {
+            let data = try Data(contentsOf: Share.userImage!)
+            myPageImage.image = UIImage(data: data)
+        } catch { }
+        myPageNickName.text = Share.userNickName
             
-    }
+    } // viewDidLoad
     
     
 
