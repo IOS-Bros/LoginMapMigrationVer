@@ -9,12 +9,14 @@ import UIKit
 
 class StartViewController: UIViewController {
     
+    @IBOutlet weak var imageLogo: UIImageView!
     // Share 생기면 수정
 //    var userEmail = "k_ye@naver.com"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
         print("StartViewController - UserEmail : \(Share.userEmail)")
         
         // MARK: - userCheck
@@ -22,6 +24,11 @@ class StartViewController: UIViewController {
         
         // MARK: - Splash View
         let time = DispatchTime.now() + .seconds(1)
+        imageLogo.alpha = 0
+        
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            self.imageLogo.alpha = 1.0
+        })
         DispatchQueue.main.asyncAfter(deadline: time, execute: self.moveToMain)
         
         

@@ -25,6 +25,9 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 
         print("MyPageViewController - UserEmail : \(Share.userEmail)")
 
@@ -38,6 +41,7 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         do {
             let data = try Data(contentsOf: Share.userImage!)
             myPageImage.image = UIImage(data: data)
+            myPageImage.layer.cornerRadius = 75
         } catch { }
         myPageNickName.text = Share.userNickName
 

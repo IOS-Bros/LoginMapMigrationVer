@@ -23,6 +23,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         //모서리 굴곡률
         btnLoc.layer.cornerRadius = 10
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
     }
     
