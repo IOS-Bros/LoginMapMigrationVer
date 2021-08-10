@@ -41,8 +41,7 @@ class AddPetViewController: UIViewController {
         dangGender.addTarget(self, action: #selector(segChanged(segCon:)), for: UIControl.Event.valueChanged)
         picker.delegate = self
         
-//        let url = URL(string: "http://localhost:8080/dogtor/image/pin.png")
-        imageURL = URL(string: "http://\(myURL):8080/dogtor/image/pin.png")
+        imageURL = URL(string: "http://\(Share.myURL):8080/dogtor/image/pin.png")
         let data = try? Data(contentsOf: imageURL!)
         dangImage.image = UIImage(data: data!)
        
@@ -55,7 +54,6 @@ class AddPetViewController: UIViewController {
       
     
     @objc func imageTapped(img: AnyObject) {
-        
         openGallery()
         
     }
@@ -105,7 +103,7 @@ class AddPetViewController: UIViewController {
         print(imageURL!, petName!, petAge! ,  petSpecies! , petGender!)
         
         let newPetInsertModel = NewPetInsertModel()
-//        newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: "ohyj0906@gmail.com" ,completionHandler: {_,_ in print("Upload Success")})
+        //        \(Share.userEmail) 수정해줘야함!!!!!
         newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: "ohyj0906@gmail.com", completionHandler: {_,_ in
                 print("Upload Success")
         })

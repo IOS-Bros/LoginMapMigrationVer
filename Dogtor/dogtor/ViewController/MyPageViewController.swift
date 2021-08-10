@@ -32,31 +32,22 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         
         // Do any additional setup after loading the view
         
-        getPetInfo("ohyj0906@gmail.com")
         print("MyPageViewController의 닉네임 : \(Share.userNickName)")
         
-        
-        do {
-            let data = try Data(contentsOf: Share.userImage!)
-            myPageImage.image = UIImage(data: data)
-        } catch { }
-        myPageNickName.text = Share.userNickName
-        
-        // Do any additional setup after loading the view
-        
-//        getPetInfo("ohyj0906@gmail.com")
-//        dangView.delegate = self
-//        dangView.dataSource = self
-        
+        // 풀어줘야함!!!!!!!!!!
+//        do {
+//            let data = try Data(contentsOf: Share.userImage!)
+//            myPageImage.image = UIImage(data: data)
+//        } catch { }
+//        myPageNickName.text = Share.userNickName
+//
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        \(Share.userEmail) 수정해줘야함!!!!!
         getPetInfo("ohyj0906@gmail.com")
-//        let checkPetInfo = CheckPetInfoModel()
-//        checkPetInfo.checkPet("ohyj0906@gmail.com")
-//        checkPetInfo.delegate = self
-//        dangView.reloadData()
     }
     
     func getPetInfo(_ email: String){
@@ -144,11 +135,6 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
                 return UICollectionViewCell()
                 
             }
-            
-//            let title = UILabel(frame: CGRect(x: 0, y: cell.bounds.size.height - 50 , width: cell.bounds.size.width, height: 50))
-//            title.text = myDogName[indexPath.row]
-//            title.textAlignment = .center
-//            cell.contentView.addSubview(title)
             cell.lblDangName.text = myDogName[indexPath.row]
             let url = URL(string: "http://\(myURL):8080/dogtor/image/\(myDogImage[indexPath.row])")
             let data = try? Data(contentsOf: url!)
