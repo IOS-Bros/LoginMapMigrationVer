@@ -15,10 +15,11 @@
 	File file = multi.getFile("file");
 
 	String petName = multi.getParameter("petName");
-  String petAge = multi.getParameter("petAge");
-  String petSpecies = multi.getParameter("petSpecies");
-  String petGender = multi.getParameter("petGender");
-  String userId = multi.getParameter("userId");
+  	String petAge = multi.getParameter("petAge");
+  	String petSpecies = multi.getParameter("petSpecies");
+  	String petGender = multi.getParameter("petGender");
+  	String petId = multi.getParameter("petId");
+
 
 	// DB
 	String url_mysql = "jdbc:mysql://localhost/dogtorYJ2?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
@@ -33,20 +34,19 @@
 	    Connection conn_mysql = DriverManager.getConnection(url_mysql,id_mysql,pw_mysql);
 	    Statement stmt_mysql = conn_mysql.createStatement();
 
-	    String A = "INSERT INTO Pet (PetImage , PetName, PetSpecies ,PetGender , PetAge , User_Email) ";
-	    String B = "VALUES(? , ? , ? , ? , ? , ?)";
+	    String A = "UPDATE Pet SET PetName = ?, PetImage = ?, PetSpecies = ?, PetGender = ?, PetAge = ? WHERE PetId = ?";
 
-	    ps = conn_mysql.prepareStatement(A+B);
-	    ps.setString(1, file.getName());
-    	  ps.setString(2, petName.trim());
-    	  ps.setString(3, petSpecies.trim());
-     	 ps.setString(4, petGender.trim());
-    	  ps.setString(5, petAge.trim());
-     	 ps.setString(6, userId.trim());
+	    ps = conn_mysql.prepareStatement(A);
 
+	    ps.setString(1, petName.trim());
+	ps.setString(2, file.getName());
+	ps.setString(3, petSpecies.trim());
+	   ps.setString(4, petGender.trim());
+	   ps.setString(5, petAge.trim());
+	   ps.setString(6, petId.trim());
 
-	  result = ps.executeUpdate();
-%>
+	result = ps.executeUpdate();
+		%>
 		{
 			"result" : "<%=result%>"
 		}
