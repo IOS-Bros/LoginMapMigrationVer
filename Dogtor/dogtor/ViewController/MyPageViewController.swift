@@ -35,12 +35,12 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         print("MyPageViewController의 닉네임 : \(Share.userNickName)")
         
         // 풀어줘야함!!!!!!!!!!
-//        do {
-//            let data = try Data(contentsOf: Share.userImage!)
-//            myPageImage.image = UIImage(data: data)
-//        } catch { }
-//        myPageNickName.text = Share.userNickName
-//
+        do {
+            let data = try Data(contentsOf: Share.userImage!)
+            myPageImage.image = UIImage(data: data)
+        } catch { }
+        myPageNickName.text = Share.userNickName
+
        
     }
     
