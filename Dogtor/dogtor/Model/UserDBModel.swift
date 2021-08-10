@@ -11,17 +11,20 @@ class UserDBModel : NSObject {
     var userId : String?
     var API : String?
     var email : String?
-    var image : String?
+    var image : URL?
     var nickName : String?
+    
     var imageURL : URL?
     
     override init() {
         
     }
     
-    init(API : String, email : String) {
+    init(API : String, email : String, image : URL, nickName : String) {
         self.API = API
         self.email = email
+        self.image = image
+        self.nickName = nickName
     }
     // 20210805 - yejin
     init(nickName : String) {

@@ -23,37 +23,33 @@ class LoginInsertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("LoginInsertViewController")
-//        let url = URL(string: receiveUserImage)
+        print("LoginInsertViewController - UserEmail : \(Share.userEmail)")
+
         do {
             let data = try Data(contentsOf: receiveUserImageURL!)
             imageView.image = UIImage(data: data)
         } catch { }
 
-        
-        tfNicName.text = receiveUserEmail
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goMyPage" {
                    let vc = segue.destination as? MyPageViewController
                    if let index = sender as? Int{
-                        vc?.myPageNickName.text = userNicName
+                        vc?.myPageNickName.text = self.userNicName
                         vc?.receiveUserImageURL = self.receiveUserImageURL
                    }
             }
     }
     
     @IBAction func btnDuplicateCheck(_ sender: UIButton) {
-        userNicName = tfNicName.text!
+        self.userNicName = tfNicName.text!
         checkNickNames()
     }
     
     @IBAction func btnFinish(_ sender: UIBarButtonItem) {
         print("btnFinish")
-        userNicName = tfNicName.text!
+        self.userNicName = tfNicName.text!
         
         if isDuplicateCheck == true {
             let loginInsertModel = LoginInsertModel()
@@ -70,6 +66,15 @@ class LoginInsertViewController: UIViewController {
                 
                 resultAlert.addAction(onAction)
                 present(resultAlert, animated: true, completion: nil)
+                
+                Share.userEmail = self.receiveUserEmail
+                Share.userNickName = self.userNicName
+                Share.userImage = self.receiveUserImageURL
+                
+                UserDefaults.standard.set(Share.userEmail, forKey: "email")
+                UserDefaults.standard.set(Share.userNickName, forKey: "nickname")
+                UserDefaults.standard.set(Share.userImage, forKey: "image")
+                
                 
             } else {
                 let resultAlert = UIAlertController(title: "완료", message: "에러가 발생 되었습니다", preferredStyle: .alert)

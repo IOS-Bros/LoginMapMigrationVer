@@ -6,13 +6,13 @@
 <%
   request.setCharacterEncoding("utf-8");
 
-  String email = request.getParameter("email");
+  String nickName = request.getParameter("nickName");
 
 	String url_mysql = "jdbc:mysql://localhost/dogtorYJ2?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
  	String id_mysql = "root";
  	String pw_mysql = "qwer1234";
 
-    String WhereDefault = "select Email, API, Image, NickName from User WHERE Email = '" + email + "'";
+    String WhereDefault = "select NickName from User WHERE NickName = '" + nickName + "'";
     // int count = 0;
 
     try {
@@ -26,13 +26,9 @@
   	[
 <%
         if (rs.next()) {
-          if( rs.getString(2) == null){
+          if(rs.getString(1) == "NULL"){
 %>
             {
-
-            "email" : "<%=rs.getString(1) %>",
-            "API" : "0",
-            "image" : "0",
             "nickName" : "0"
             }
 
@@ -40,27 +36,18 @@
           }else{
 %>
 
-			{
-
-			"email" : "<%=rs.getString(1) %>",
-      "API" : "<%=rs.getString(2)%>",
-      "image" : "<%=rs.getString(3)%>",
-      "nickName" : "<%=rs.getString(4)%>"
-			}
+      			{
+      			"nickName" : "<%=rs.getString(1) %>"
+      			}
 <%
-}
-} else {
-  %>
-              {
-
-              "email" : "0",
-              "API" : "0",
-              "image" : "0",
-              "nickName" : "0"
-              }
-
-  <%
-}
+        }
+      } else {
+%>
+        {
+        "nickName" : "0"
+      }
+  <%    
+      }
 %>
 
 
