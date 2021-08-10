@@ -40,6 +40,11 @@ class AddPetViewController: UIViewController {
         
         dangGender.addTarget(self, action: #selector(segChanged(segCon:)), for: UIControl.Event.valueChanged)
         picker.delegate = self
+        
+//        let url = URL(string: "http://localhost:8080/dogtor/image/pin.png")
+        imageURL = URL(string: "http://\(myURL):8080/dogtor/image/pin.png")
+        let data = try? Data(contentsOf: imageURL!)
+        dangImage.image = UIImage(data: data!)
        
     }
     

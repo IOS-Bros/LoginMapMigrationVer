@@ -56,10 +56,9 @@ class ModifyPetViewController: UIViewController {
             scMyDogGender.selectedSegmentIndex = 0
         }
         
-        let url = URL(string: "http://\(myURL):8080/dogtor/image/\(receivemyDogImage)")
-        let data = try? Data(contentsOf: url!)
+        imageURL = URL(string: "http://\(myURL):8080/dogtor/image/\(receivemyDogImage)")
+        let data = try? Data(contentsOf: imageURL!)
         ivMyDog.image = UIImage(data: data!)
-        
     }
     
     func openGallery(){
@@ -127,10 +126,19 @@ class ModifyPetViewController: UIViewController {
         
 //        print(imageURL!, petName!, petAge!,  petSpecies! , petGender!)
         
-        var result = ""
-        
         let petModifyModel = PetModifyModel()
-        petModifyModel.uploadImageFile(at: imageURL!, petName: receivemyDogName, petAge: receivemyDogAge, petSpecies: receivemyDogSpecies, petGender: receivemyDogGender, petId: receivemyDogId, completionHandler: {_,_ in result})
+        petModifyModel.uploadImageFile(at: imageURL!, petName: receivemyDogName, petAge: receivemyDogAge, petSpecies: receivemyDogSpecies, petGender: receivemyDogGender, petId: receivemyDogId, completionHandler: {_,_ in
+            print("Upload Success")
+        })
+        
+        let resultAlert = UIAlertController(title: "완료", message: "수정이 되었습니다", preferredStyle: .alert)
+        let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+
+            self.navigationController?.popViewController(animated: true)
+        })
+
+        resultAlert.addAction(onAction)
+        present(resultAlert, animated: true, completion: nil)
 //        
 //        if result {
 //            let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)

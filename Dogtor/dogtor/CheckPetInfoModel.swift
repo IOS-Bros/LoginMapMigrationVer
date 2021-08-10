@@ -49,7 +49,7 @@ class CheckPetInfoModel : NSObject {
         
         
         for i in 0..<jsonResult.count {
-                print("HAHA")
+//                print("HAHA")
                 jsonElement = jsonResult[i] as! NSDictionary
                 if let PetId = jsonElement["PetId"] as? String,
                    let PetName = jsonElement["PetName"] as? String,
@@ -57,15 +57,11 @@ class CheckPetInfoModel : NSObject {
                    let PetSpecies = jsonElement["PetSpecies"] as? String,
                    let PetGender = jsonElement["PetGender"] as? String,
                    let PetAge = jsonElement["PetAge"] as? String{
-                    print("Model : \(PetId)")
+//                    print("Model : \(PetId)")
                     let query = PetDBModel(PetId: PetId, PetName: PetName, PetImage: PetImage, PetSpecies: PetSpecies, PetGender: PetGender, PetAge: PetAge)
                     locations.add(query)
                 }
             }
-        
-        
-        
-        
         
 //         다른 일을 할때를 대비하여 async를 사용한다.
 //        DispatchQueue.main.async(execute: {() -> Void in
