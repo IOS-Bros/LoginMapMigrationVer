@@ -30,15 +30,15 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         
         // Do any additional setup after loading the view
         
-        getPetInfo("ohyj0906@gmail.com")
+//        getPetInfo("ohyj0906@gmail.com")
 //        dangView.delegate = self
 //        dangView.dataSource = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        getPetInfo("ohyj0906@gmail.com")
-//        super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
+        getPetInfo("ohyj0906@gmail.com")
 //        let checkPetInfo = CheckPetInfoModel()
 //        checkPetInfo.checkPet("ohyj0906@gmail.com")
 //        checkPetInfo.delegate = self
@@ -51,12 +51,27 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         checkPetInfo.checkPet(email)
         checkPetInfo.delegate = self
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dangModify"{
+//            let cell = sender as! MyPageCollectionViewCell
+//            let indexPath = self.dangView.indexPath(for: cell)
+            let modifyView = segue.destination as! ModifyPetViewController
+            modifyView.receiveInfo(myDogId[sender as! Int], myDogName[sender as! Int], myDogImage[sender as! Int], myDogSpecies[sender as! Int], myDogGender[sender as! Int], myDogAge[sender as! Int])
+        }
+    }
 
 
 }
 
 extension MyPageViewController : CheckPetInfoModelProtocol {
     func petInfoDownloaded(items: NSMutableArray) {
+        print("여기서 몇개지",items.count)
+        myDogName.removeAll()
+        myDogImage.removeAll()
+        myDogId.removeAll()
+        myDogSpecies.removeAll()
+        myDogGender.removeAll()
+        myDogAge.removeAll()
         
         for i in 0..<items.count{
             let petDB: PetDBModel = items[i] as! PetDBModel
@@ -70,19 +85,12 @@ extension MyPageViewController : CheckPetInfoModelProtocol {
         }
         
         print(myDogName.count)
-        
+
         DispatchQueue.main.async {
            self.dangView.reloadData()
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "dangModify"{
-//            let cell = sender as! MyPageCollectionViewCell
-//            let indexPath = self.dangView.indexPath(for: cell)
-            let modifyView = segue.destination as! ModifyPetViewController
-            modifyView.receiveInfo(myDogId[sender as! Int], myDogName[sender as! Int], myDogImage[sender as! Int], myDogSpecies[sender as! Int], myDogGender[sender as! Int], myDogAge[sender as! Int])
-        }
-    }
+    
 }
 
 
