@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-	String url_mysql = "jdbc:mysql://localhost/dogtor_tmep?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
+	String url_mysql = "jdbc:mysql://localhost/dogtorYJ2?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
  	String id_mysql = "root";
  	String pw_mysql = "qwer1234";
   String WhereDefault = "select * from feed ORDER BY fno DESC";
