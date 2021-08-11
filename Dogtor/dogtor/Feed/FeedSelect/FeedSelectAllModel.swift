@@ -13,7 +13,7 @@ protocol FeedSelectAllModelProtocol{
 
 class FeedSelectAllModel{
     var delegate: FeedSelectAllModelProtocol!
-    let urlPath = "\(Common.feedImagePath)feed_select_all.jsp"
+    let urlPath = "\(Common.jspPath)feed_select_all.jsp"
     
     func feedDownloaded(){
         guard let url: URL = URL(string: urlPath) else {

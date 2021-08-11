@@ -377,6 +377,7 @@
                                             <outlet property="submitDate" destination="q31-34-caM" id="qrF-GO-8dA"/>
                                             <outlet property="writerImage" destination="jRM-Dg-YuR" id="fbZ-GQ-PzM"/>
                                             <outlet property="writerName" destination="Tnh-Bc-5B8" id="9Ep-bV-Qzr"/>
+                                            <segue destination="TxT-IK-U2R" kind="show" identifier="modifyFeedSegue" id="qSv-Zh-oYA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1248,6 +1249,9 @@
             <point key="canvasLocation" x="-1687" y="-658"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qSv-Zh-oYA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="iu" width="540" height="540"/>
         <image name="location" catalog="system" width="128" height="121"/>

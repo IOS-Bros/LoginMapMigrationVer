@@ -9,6 +9,7 @@ import Foundation
 
 class Common{
     static let ipAddr = "192.168.2.4"
-    static let feedImagePath = "http://\(ipAddr):8080//dogtor/"
+    static let jspPath = "http://\(ipAddr):8080//dogtor/"
+    static let feedImagePath = "http://\(ipAddr):8080//dogtor/feedImage/"
     static let userInfo = UserDBModel()
 }

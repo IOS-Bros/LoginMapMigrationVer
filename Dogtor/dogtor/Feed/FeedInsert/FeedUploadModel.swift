@@ -69,7 +69,7 @@ class FeedUploadModel{
         // 경로를 준비하고
         //let url = URL(string: "\(filepath), ImageUpload.jsp")!
         
-        let url = URL(string: "\(Common.feedImagePath)\(jspFileName)")!
+        let url = URL(string: "\(Common.jspPath)\(jspFileName)")!
 
         // 경로로부터 요청을 생성한다. 이 때 Content-Type 헤더 필드를 변경한다.
         var request = URLRequest(url: url)
