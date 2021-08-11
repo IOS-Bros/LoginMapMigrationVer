@@ -1,6 +1,6 @@
 //  FeedViewContorollerViewController.swift
 //  dogtor
-//
+//Command CompileSwiftSources failed with a nonzero exit code
 //  Created by 윤재필 on 2021/08/04.
 
 import UIKit
@@ -8,7 +8,7 @@ import Kingfisher
 
 class FeedViewContoroller: UIViewController {
 
-    @IBOutlet weak var feedListTableView: UITableView!
+    @IBOutlet var feedListTableView: UITableView!
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
     
