@@ -7,7 +7,7 @@
 
 <%
 
-	String savePath = "/Library/Tomcat/webapps/ROOT/dogtor/feedImage/";
+	String savePath = "/Library/Tomcat/webapps/ROOT/dogtorYJ2/feedImage/";
 	int sizeLimit = 10 * 1024 * 1024;
 
 	MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "UTF-8");
