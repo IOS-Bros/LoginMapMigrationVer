@@ -45,10 +45,12 @@ PODS:
     - KakaoSDKCommon/Common (= 2.6.0)
   - KakaoSDKUser (2.6.0):
     - KakaoSDKAuth (= 2.6.0)
+  - Kingfisher (6.3.1)
 
 DEPENDENCIES:
   - GoogleSignIn
   - KakaoSDK
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
@@ -66,6 +68,7 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -82,7 +85,8 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: b129bb2dd2069e17d5463747d66f9d38f2067ca9
   KakaoSDKTemplate: 8218258409a8829c364029698c515665c6d0d886
   KakaoSDKUser: ff9d7436ccbf0d65615bc56f3f4e31fb06830db2
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
 
-PODFILE CHECKSUM: 7143de10be6f2b42c841deef9d614b820ce18422
+PODFILE CHECKSUM: e342123b119383da7afb4bd694c63322965205a1
 
 COCOAPODS: 1.10.1

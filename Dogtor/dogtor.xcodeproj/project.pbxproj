@@ -35,7 +35,19 @@
 		375CC7BE26BD78E2005ADF38 /* ModifyPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC7BD26BD78E2005ADF38 /* ModifyPetViewController.swift */; };
 		375CC7C026BD7B01005ADF38 /* MyPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC7BF26BD7B01005ADF38 /* MyPageCollectionViewCell.swift */; };
 		375CC7C226BFFFBA005ADF38 /* NewPetInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC7C126BFFFBA005ADF38 /* NewPetInsertModel.swift */; };
-		4A010229F567DD2D2D47E5FC /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */; };
+		803EBB2B26C3BF3300D5D350 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB2826C3BF3300D5D350 /* Common.swift */; };
+		803EBB2C26C3BF3300D5D350 /* LoginedUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB2926C3BF3300D5D350 /* LoginedUserInfo.swift */; };
+		803EBB3C26C3BF3B00D5D350 /* FeedViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3026C3BF3B00D5D350 /* FeedViewContoroller.swift */; };
+		803EBB3D26C3BF3B00D5D350 /* feddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3126C3BF3B00D5D350 /* feddViewCell.swift */; };
+		803EBB3E26C3BF3B00D5D350 /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3226C3BF3B00D5D350 /* HashTagCollectionViewCell.swift */; };
+		803EBB3F26C3BF3B00D5D350 /* FeedSelectAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3326C3BF3B00D5D350 /* FeedSelectAllModel.swift */; };
+		803EBB4026C3BF3B00D5D350 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3426C3BF3B00D5D350 /* FeedModel.swift */; };
+		803EBB4126C3BF3B00D5D350 /* FeedImageSelectAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3626C3BF3B00D5D350 /* FeedImageSelectAllModel.swift */; };
+		803EBB4226C3BF3B00D5D350 /* FeedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3726C3BF3B00D5D350 /* FeedImageModel.swift */; };
+		803EBB4326C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3926C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift */; };
+		803EBB4426C3BF3B00D5D350 /* FeedAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3A26C3BF3B00D5D350 /* FeedAddViewController.swift */; };
+		803EBB4526C3BF3B00D5D350 /* FeedUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB3B26C3BF3B00D5D350 /* FeedUploadModel.swift */; };
+		82D2AC5F17308B81E90A6BBF /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DE3BB8DAD394724AD4FEB2 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +69,6 @@
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertModel.swift; sourceTree = "<group>"; };
 		04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewController.swift; sourceTree = "<group>"; };
-		05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 		1F9D145426BB939100F22C6D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPetInfoModel.swift; sourceTree = "<group>"; };
 		1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDBModel.swift; sourceTree = "<group>"; };
@@ -70,8 +81,21 @@
 		375CC7BD26BD78E2005ADF38 /* ModifyPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPetViewController.swift; sourceTree = "<group>"; };
 		375CC7BF26BD7B01005ADF38 /* MyPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		375CC7C126BFFFBA005ADF38 /* NewPetInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetInsertModel.swift; sourceTree = "<group>"; };
-		6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
-		7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5696916A875357A38064E97C /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
+		803EBB2826C3BF3300D5D350 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		803EBB2926C3BF3300D5D350 /* LoginedUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedUserInfo.swift; sourceTree = "<group>"; };
+		803EBB3026C3BF3B00D5D350 /* FeedViewContoroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewContoroller.swift; sourceTree = "<group>"; };
+		803EBB3126C3BF3B00D5D350 /* feddViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feddViewCell.swift; sourceTree = "<group>"; };
+		803EBB3226C3BF3B00D5D350 /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		803EBB3326C3BF3B00D5D350 /* FeedSelectAllModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSelectAllModel.swift; sourceTree = "<group>"; };
+		803EBB3426C3BF3B00D5D350 /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		803EBB3626C3BF3B00D5D350 /* FeedImageSelectAllModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImageSelectAllModel.swift; sourceTree = "<group>"; };
+		803EBB3726C3BF3B00D5D350 /* FeedImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImageModel.swift; sourceTree = "<group>"; };
+		803EBB3926C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAddCollectionViewCell.swift; sourceTree = "<group>"; };
+		803EBB3A26C3BF3B00D5D350 /* FeedAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAddViewController.swift; sourceTree = "<group>"; };
+		803EBB3B26C3BF3B00D5D350 /* FeedUploadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUploadModel.swift; sourceTree = "<group>"; };
+		A7C7FD6548B22C7A06666936 /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
+		B9DE3BB8DAD394724AD4FEB2 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A010229F567DD2D2D47E5FC /* Pods_dogtor.framework in Frameworks */,
+				82D2AC5F17308B81E90A6BBF /* Pods_dogtor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +116,7 @@
 				0404D5F726B3C476008C42BC /* dogtor */,
 				0404D5F626B3C476008C42BC /* Products */,
 				F8E37A1A6B94A434AB822657 /* Pods */,
-				153511B83F25E5A53B696EBC /* Frameworks */,
+				AFEE6B742A456BAFB53DE343 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +131,9 @@
 		0404D5F726B3C476008C42BC /* dogtor */ = {
 			isa = PBXGroup;
 			children = (
+				803EBB2726C3BF3300D5D350 /* Common */,
 				049DCB6726C24E2D00013F0D /* Cell */,
+				803EBB2E26C3BF3B00D5D350 /* Feed */,
 				049DCB6226C24DE500013F0D /* Share */,
 				049DCB6126C24DCB00013F0D /* Model */,
 				049DCB6026C24D9400013F0D /* ViewController */,
@@ -172,10 +198,61 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		153511B83F25E5A53B696EBC /* Frameworks */ = {
+		803EBB2726C3BF3300D5D350 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7901DA7FFB4F05A5217C69C8 /* Pods_dogtor.framework */,
+				803EBB2826C3BF3300D5D350 /* Common.swift */,
+				803EBB2926C3BF3300D5D350 /* LoginedUserInfo.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		803EBB2E26C3BF3B00D5D350 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				803EBB2F26C3BF3B00D5D350 /* FeedSelect */,
+				803EBB3526C3BF3B00D5D350 /* FeedImage */,
+				803EBB3826C3BF3B00D5D350 /* FeedInsert */,
+			);
+			name = Feed;
+			path = dogtor/Feed;
+			sourceTree = SOURCE_ROOT;
+		};
+		803EBB2F26C3BF3B00D5D350 /* FeedSelect */ = {
+			isa = PBXGroup;
+			children = (
+				803EBB3026C3BF3B00D5D350 /* FeedViewContoroller.swift */,
+				803EBB3126C3BF3B00D5D350 /* feddViewCell.swift */,
+				803EBB3226C3BF3B00D5D350 /* HashTagCollectionViewCell.swift */,
+				803EBB3326C3BF3B00D5D350 /* FeedSelectAllModel.swift */,
+				803EBB3426C3BF3B00D5D350 /* FeedModel.swift */,
+			);
+			path = FeedSelect;
+			sourceTree = "<group>";
+		};
+		803EBB3526C3BF3B00D5D350 /* FeedImage */ = {
+			isa = PBXGroup;
+			children = (
+				803EBB3626C3BF3B00D5D350 /* FeedImageSelectAllModel.swift */,
+				803EBB3726C3BF3B00D5D350 /* FeedImageModel.swift */,
+			);
+			path = FeedImage;
+			sourceTree = "<group>";
+		};
+		803EBB3826C3BF3B00D5D350 /* FeedInsert */ = {
+			isa = PBXGroup;
+			children = (
+				803EBB3926C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift */,
+				803EBB3A26C3BF3B00D5D350 /* FeedAddViewController.swift */,
+				803EBB3B26C3BF3B00D5D350 /* FeedUploadModel.swift */,
+			);
+			path = FeedInsert;
+			sourceTree = "<group>";
+		};
+		AFEE6B742A456BAFB53DE343 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9DE3BB8DAD394724AD4FEB2 /* Pods_dogtor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,8 +260,8 @@
 		F8E37A1A6B94A434AB822657 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */,
-				05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */,
+				5696916A875357A38064E97C /* Pods-dogtor.debug.xcconfig */,
+				A7C7FD6548B22C7A06666936 /* Pods-dogtor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -196,11 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0404D60926B3C478008C42BC /* Build configuration list for PBXNativeTarget "dogtor" */;
 			buildPhases = (
-				F775A8CA7A7D94BB2E7D3932 /* [CP] Check Pods Manifest.lock */,
+				D835001C569806F11DDF8488 /* [CP] Check Pods Manifest.lock */,
 				0404D5F126B3C476008C42BC /* Sources */,
 				0404D5F226B3C476008C42BC /* Frameworks */,
 				0404D5F326B3C476008C42BC /* Resources */,
-				6A1F226FF25645BA9B537DE8 /* [CP] Embed Pods Frameworks */,
+				7CE4CD671A1AF73E40A51B6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,7 +334,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6A1F226FF25645BA9B537DE8 /* [CP] Embed Pods Frameworks */ = {
+		7CE4CD671A1AF73E40A51B6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,7 +351,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F775A8CA7A7D94BB2E7D3932 /* [CP] Check Pods Manifest.lock */ = {
+		D835001C569806F11DDF8488 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,11 +382,16 @@
 			files = (
 				375CC7BC26BD65D6005ADF38 /* PetDeleteModel.swift in Sources */,
 				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
+				803EBB4426C3BF3B00D5D350 /* FeedAddViewController.swift in Sources */,
+				803EBB2B26C3BF3300D5D350 /* Common.swift in Sources */,
 				1F9D145526BB939100F22C6D /* AddPetViewController.swift in Sources */,
 				1F9D146126BCDF2E00F22C6D /* MapDBModel.swift in Sources */,
+				803EBB3E26C3BF3B00D5D350 /* HashTagCollectionViewCell.swift in Sources */,
 				04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */,
+				803EBB4226C3BF3B00D5D350 /* FeedImageModel.swift in Sources */,
 				049DCB6426C24DEF00013F0D /* Share.swift in Sources */,
 				375CC7BA26BD65AB005ADF38 /* PetModifyModel.swift in Sources */,
+				803EBB4026C3BF3B00D5D350 /* FeedModel.swift in Sources */,
 				1F9D145F26BCDEF800F22C6D /* MapQueryModel.swift in Sources */,
 				375CC7C026BD7B01005ADF38 /* MyPageCollectionViewCell.swift in Sources */,
 				04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */,
@@ -317,16 +399,23 @@
 				1F9D145926BC2C1300F22C6D /* CheckPetInfoModel.swift in Sources */,
 				375CC7C226BFFFBA005ADF38 /* NewPetInsertModel.swift in Sources */,
 				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
+				803EBB3F26C3BF3B00D5D350 /* FeedSelectAllModel.swift in Sources */,
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
+				803EBB3D26C3BF3B00D5D350 /* feddViewCell.swift in Sources */,
+				803EBB4326C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift in Sources */,
 				04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
+				803EBB2C26C3BF3300D5D350 /* LoginedUserInfo.swift in Sources */,
 				042A80F226BD33F8009BDCE8 /* CheckUserModel.swift in Sources */,
+				803EBB4126C3BF3B00D5D350 /* FeedImageSelectAllModel.swift in Sources */,
 				375CC7BE26BD78E2005ADF38 /* ModifyPetViewController.swift in Sources */,
+				803EBB4526C3BF3B00D5D350 /* FeedUploadModel.swift in Sources */,
 				041480AF26BB8C3A00B74D88 /* CheckNicNameModel.swift in Sources */,
 				042A80EF26BD28C7009BDCE8 /* StartViewController.swift in Sources */,
 				1F9D146326BCE02800F22C6D /* MapDetailViewController.swift in Sources */,
 				04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */,
 				1F9D145D26BCDEAF00F22C6D /* MapViewController.swift in Sources */,
+				803EBB3C26C3BF3B00D5D350 /* FeedViewContoroller.swift in Sources */,
 				1F9D145B26BC2F0200F22C6D /* PetDBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +560,7 @@
 		};
 		0404D60A26B3C478008C42BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6514A371C0232D3A6A56DA92 /* Pods-dogtor.debug.xcconfig */;
+			baseConfigurationReference = 5696916A875357A38064E97C /* Pods-dogtor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,7 +580,7 @@
 		};
 		0404D60B26B3C478008C42BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C38A7E34E30D65D0F4EE4E /* Pods-dogtor.release.xcconfig */;
+			baseConfigurationReference = A7C7FD6548B22C7A06666936 /* Pods-dogtor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
