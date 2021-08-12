@@ -9,6 +9,9 @@ import UIKit
 
 class feddViewCell: UITableViewCell {
     
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+
+    
     var hashTagList = [String]()
     
     var feedModel: FeedModel?
@@ -70,6 +73,9 @@ extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
         cell.lblHashTag.text = "#\(hashTagList[indexPath.row])"
         cell.lblHashTag.numberOfLines = 1
         cell.lblHashTag.setTextView()
+        cell.layer.cornerRadius = 4
+        cell.layer.backgroundColor = pointColor.cgColor
+        cell.lblHashTag.textColor = UIColor.white
         return cell
     }
 }

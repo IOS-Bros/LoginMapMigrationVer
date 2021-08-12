@@ -192,7 +192,7 @@ class CommentViewController: UIViewController, UITextViewDelegate {
            DispatchQueue.main.async {
             let indexPath = IndexPath(row: commentArray.count - 1, section: 0)
                self.tbComment.scrollToRow(at: indexPath, at: .bottom, animated: true)
-            pirnt("Scroll Down")
+            print("Scroll Down")
            }
        }
 

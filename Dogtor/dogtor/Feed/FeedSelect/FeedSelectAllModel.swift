@@ -14,13 +14,19 @@ protocol FeedSelectAllModelProtocol{
 class FeedSelectAllModel{
     var delegate: FeedSelectAllModelProtocol!
     let urlPath = "\(Common.jspPath)feed_select_all.jsp"
-    var condition: String?
+    var conditions: [String]?
     
     func feedDownloaded(_ condition: String?){
-        self.condition = condition
         guard let url: URL = URL(string: urlPath) else {
             print("feedDownloaded() : URL is not avilable")
             return
+        }
+        
+        if let condition = condition {
+            conditions = [String]()
+            for con in condition.split(separator: " "){
+                conditions?.append(String(con))
+            }
         }
         
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -63,12 +69,29 @@ class FeedSelectAllModel{
                let fWriter = jsonElement["fWirter"] as? String,
                let fHashTag = jsonElement["fHashTag"] as? String{
                 let dto = FeedModel(fNo: Int(fNo)!, fSubmitDate: fSubmitDate, fContent: fContent.replacingOccurrences(of: "[__empty_space__]", with: "\n"), fWriter: fWriter, fHashTag: fHashTag)
-                dto.printAllFromSelectModel()
-                locations.add(dto)
+                if isContainsCondition(dto: dto) == true {
+                    dto.printAllFromSelectModel()
+                    locations.add(dto)
+                }
+//                dto.printAllFromSelectModel()
+//                locations.add(dto)
             }
         }
+        conditions = nil
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.feedDownloaded(items: locations)
         })
     }//parseJSON
+    
+    func isContainsCondition(dto: FeedModel) -> Bool{
+        guard let _ = conditions else {
+            return true
+        }
+        for con in conditions! {
+            if dto.fHashTag.contains(con){
+                return true
+            }
+        }
+        return false
+    }
 }//FeedSelectAllModel

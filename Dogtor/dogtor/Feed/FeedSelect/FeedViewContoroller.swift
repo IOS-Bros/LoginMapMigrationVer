@@ -10,18 +10,20 @@ class FeedViewContoroller: UIViewController {
 
     @IBOutlet var feedListTableView: UITableView!
     @IBOutlet weak var tfSearch: UITextField!
+    @IBOutlet weak var btnSearchIcon: UIButton!
     
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
     
     
     //####################################
-    let loginedUserid = "greenSky"
+    let loginedUserid = Share.userNickName
     //####################################
     
     //cell생성시 호출하면 셀 개수만큼 인스턴스가 생성되므로 미리 선언
     let feedWriterDataSelectModel = FeedWriterDataSelectModel()
     
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
     
     // MARK: - function
     
@@ -30,6 +32,7 @@ class FeedViewContoroller: UIViewController {
         //이후 수정
         feedListTableView.delegate = self
         feedListTableView.dataSource = self
+        itemDesignSet()
         
         tableDataLoad(nil)
         initRefresh()
@@ -38,6 +41,15 @@ class FeedViewContoroller: UIViewController {
         //[수정요함]이거 빼고 글 작성했으면 navigation으로 갱신하기
         tableDataLoad(nil)
     } //viewWillAppear
+    
+    func itemDesignSet(){
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        btnSearchIcon.layer.cornerRadius = 4
+        tfSearch.layer.borderWidth = 1
+        tfSearch.layer.borderColor = pointColor.cgColor
+        tfSearch.layer.cornerRadius = 8.0
+    }
     
     func tableDataLoad(_ condition: String?){
         let feedSelectAllModel = FeedSelectAllModel()
@@ -68,7 +80,7 @@ class FeedViewContoroller: UIViewController {
     @IBAction func btnSearch(_ sender: UIButton) {
         //비었을시 비활성화
         if tfSearch.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
-            return
+            tableDataLoad(nil)
         }
         let inputedSearchStr = tfSearch.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         tableDataLoad(inputedSearchStr)
@@ -197,6 +209,7 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         
                 DispatchQueue.main.async {
                     cell.writerImage.kf.setImage(with: url)
+                    cell.writerImage.layer.cornerRadius = 7.5
                 }
             })
         }
