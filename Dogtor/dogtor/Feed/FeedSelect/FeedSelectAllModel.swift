@@ -14,8 +14,10 @@ protocol FeedSelectAllModelProtocol{
 class FeedSelectAllModel{
     var delegate: FeedSelectAllModelProtocol!
     let urlPath = "\(Common.jspPath)feed_select_all.jsp"
+    var condition: String?
     
-    func feedDownloaded(){
+    func feedDownloaded(_ condition: String?){
+        self.condition = condition
         guard let url: URL = URL(string: urlPath) else {
             print("feedDownloaded() : URL is not avilable")
             return
