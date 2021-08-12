@@ -28,9 +28,6 @@ class FeedViewContoroller: UIViewController {
         feedListTableView.delegate = self
         feedListTableView.dataSource = self
         
-        feedListTableView.rowHeight = UITableView.automaticDimension
-        feedListTableView.estimatedRowHeight = 400
-        
         tableDataLoad()
     } //viewDidLoad
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +116,8 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         return feedItem.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedListTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! feddViewCell
         
@@ -126,9 +125,8 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         cell.feedModel = item
         cell.writerName.text = item.fWriter
         cell.submitDate.text = item.fSubmitDate
-        cell.content.numberOfLines = 0
-        cell.content.translatesAutoresizingMaskIntoConstraints = true
         cell.content.text = item.fContent
+        cell.content.numberOfLines = 0
         cell.content.setTextView()
         
         let hashTagStrs = item.fHashTag

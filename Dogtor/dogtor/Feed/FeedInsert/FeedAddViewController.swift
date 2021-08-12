@@ -27,7 +27,6 @@ class FeedAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //?? 플레이스홀더 어케쓴거야
         hastTagCollectionView.delegate = self
         hastTagCollectionView.dataSource = self
         picker.delegate = self
@@ -261,11 +260,4 @@ extension FeedAddViewController: UICollectionViewDataSource, UICollectionViewDel
     }
 
     
-}
-
-extension FeedAddViewController: UICollectionViewDelegateFlowLayout{
-    //좌우간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
 }

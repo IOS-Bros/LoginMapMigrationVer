@@ -14,7 +14,7 @@ protocol FeedImageSelectAllModelProtocol{
 
 class FeedImageSelectAllModel{
     var delegate: FeedImageSelectAllModelProtocol!
-    let urlPath = "http://\(Common.ipAddr):8080//dogtor_temp/feed_image_select_all.jsp"
+    let urlPath = "\(Common.jspPath)feed_image_select_all.jsp"
     
     func feedImageDownloaded(){
         guard let url: URL = URL(string: urlPath) else {

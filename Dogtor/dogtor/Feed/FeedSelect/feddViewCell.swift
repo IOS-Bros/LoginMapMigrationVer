@@ -37,12 +37,26 @@ class feddViewCell: UITableViewCell {
         print(justDebugStr)
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.content.text = nil
+        self.hashTagList.removeAll()
+        self.content.translatesAutoresizingMaskIntoConstraints = false
+        self.content.numberOfLines = 0
+        self.updateLayout()
+    }
+    
+    func updateLayout(){
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+    }
 
 }
 
 extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        hashTagList.count
+        return hashTagList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,11 +70,5 @@ extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
         cell.lblHashTag.setTextView()
         return cell
     }
-}
-
-extension feddViewCell: UICollectionViewDelegateFlowLayout{
-    //좌우간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
+    
 }
