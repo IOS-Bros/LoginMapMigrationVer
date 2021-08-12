@@ -22,8 +22,10 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //모서리 굴곡률
-        btnLoc.layer.cornerRadius = 10
+        btnLoc.layer.cornerRadius = 17.5
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     override func viewWillAppear(_ animated: Bool) {

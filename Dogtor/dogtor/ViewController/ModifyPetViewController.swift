@@ -9,6 +9,8 @@ import UIKit
 
 class ModifyPetViewController: UIViewController {
     
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+    
     let imgPicker = UIImagePickerController()
     var imageURL: URL?
     
@@ -29,6 +31,25 @@ class ModifyPetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tfMyDogName.layer.borderWidth = 1
+        tfMyDogName.layer.cornerRadius = 8.0
+        tfMyDogName.layer.borderColor = pointColor.cgColor
+        tfMyDogSpec.layer.borderWidth = 1
+        tfMyDogSpec.layer.cornerRadius = 8.0
+        tfMyDogSpec.layer.borderColor = pointColor.cgColor
+        tfMyDogAge.layer.borderWidth = 1
+        tfMyDogAge.layer.cornerRadius = 8.0
+        tfMyDogAge.layer.borderColor = pointColor.cgColor
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        scMyDogGender.backgroundColor = .white
+        scMyDogGender.selectedSegmentTintColor = pointColor
+        scMyDogGender.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+        scMyDogGender.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        
+        ivMyDog.layer.cornerRadius = 40
         
         tfMyDogName.text = receivemyDogName
         tfMyDogSpec.text = receivemyDogSpecies

@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
         tfTitle.layer.borderColor = pointColor.cgColor
         tvContent.layer.borderWidth = 1
         tvContent.layer.borderColor = pointColor.cgColor
+        tvContent.layer.cornerRadius = 8.0
         
     }
     

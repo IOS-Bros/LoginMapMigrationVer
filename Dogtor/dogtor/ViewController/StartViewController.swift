@@ -15,6 +15,7 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
         print("StartViewController - UserEmail : \(Share.userEmail)")
         
         // MARK: - userCheck

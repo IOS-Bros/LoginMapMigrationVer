@@ -10,6 +10,8 @@ import WebKit
 
 class MapDetailViewController: UIViewController {
     
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
@@ -17,6 +19,8 @@ class MapDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
         loadWebPage(url: receiveUrl)
         webView.navigationDelegate = self // 안드로이드 온크리에이트
