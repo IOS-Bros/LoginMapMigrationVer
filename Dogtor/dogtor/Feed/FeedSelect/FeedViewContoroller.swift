@@ -9,6 +9,7 @@ import Kingfisher
 class FeedViewContoroller: UIViewController {
 
     @IBOutlet var feedListTableView: UITableView!
+    @IBOutlet weak var tfSearch: UITextField!
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
     
@@ -28,19 +29,20 @@ class FeedViewContoroller: UIViewController {
         feedListTableView.delegate = self
         feedListTableView.dataSource = self
         
-        tableDataLoad()
+        tableDataLoad(nil)
+        initRefresh()
     } //viewDidLoad
     override func viewWillAppear(_ animated: Bool) {
-        tableDataLoad()
+        //[수정요함]이거 빼고 글 작성했으면 navigation으로 갱신하기
+        tableDataLoad(nil)
     } //viewWillAppear
     
-    func tableDataLoad(){
+    func tableDataLoad(_ condition: String?){
         let feedSelectAllModel = FeedSelectAllModel()
         feedSelectAllModel.delegate = self
         feedItem.removeAllObjects()
         feedImageItem.removeAllObjects()
-        feedSelectAllModel.feedDownloaded()
-        initRefresh()
+        feedSelectAllModel.feedDownloaded(condition)
     }
     
     //아래로 당겨서 리프레시
@@ -58,6 +60,16 @@ class FeedViewContoroller: UIViewController {
     @objc func updateUI(refresh: UIRefreshControl) {
         refresh.endRefreshing()
         feedListTableView.reloadData()
+    }
+    
+    //검색버튼 액션
+    @IBAction func btnSearch(_ sender: UIButton) {
+        //비었을시 비활성화
+        if tfSearch.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
+            return
+        }
+        let inputedSearchStr = tfSearch.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        tableDataLoad(inputedSearchStr)
     }
     
     
