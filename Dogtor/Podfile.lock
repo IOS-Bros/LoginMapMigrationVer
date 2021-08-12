@@ -48,6 +48,7 @@ PODS:
   - Kingfisher (6.3.1)
 
 DEPENDENCIES:
+  - Alamofire
   - GoogleSignIn
   - KakaoSDK
   - Kingfisher
@@ -87,6 +88,6 @@ SPEC CHECKSUMS:
   KakaoSDKUser: ff9d7436ccbf0d65615bc56f3f4e31fb06830db2
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
 
-PODFILE CHECKSUM: e342123b119383da7afb4bd694c63322965205a1
+PODFILE CHECKSUM: f441ede6309da4e8c0472f2654d614dd5897a781
 
 COCOAPODS: 1.10.1

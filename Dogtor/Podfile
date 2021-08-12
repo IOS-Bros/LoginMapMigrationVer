@@ -9,5 +9,6 @@ target 'dogtor' do
   pod 'GoogleSignIn'
   pod 'KakaoSDK'
   pod 'Kingfisher'
+  pod 'Alamofire'
 
 end
