@@ -25,11 +25,11 @@ class FeedViewContoroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //이후 수정
-        feedListTableView.rowHeight = 400
-        feedListTableView.estimatedRowHeight = 400
-
         feedListTableView.delegate = self
         feedListTableView.dataSource = self
+        
+        feedListTableView.rowHeight = UITableView.automaticDimension
+        feedListTableView.estimatedRowHeight = 400
         
         tableDataLoad()
     } //viewDidLoad
@@ -108,6 +108,10 @@ extension FeedViewContoroller: FeedImageSelectAllModelProtocol{
 
 extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedItem.count
     }
@@ -119,6 +123,8 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         cell.feedModel = item
         cell.writerName.text = item.fWriter
         cell.submitDate.text = item.fSubmitDate
+        cell.content.numberOfLines = 0
+        cell.content.translatesAutoresizingMaskIntoConstraints = true
         cell.content.text = item.fContent
         cell.content.setTextView()
         
@@ -159,6 +165,7 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
                 if imageName.contains("http") {
                     imagePath = imageName
                 } else {
+                    
                     imagePath = Common.writerImagePath + imageName
                 }
                 print("writer image full path : \(imagePath)")
