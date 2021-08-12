@@ -19,11 +19,14 @@ class FeedAddViewController: UIViewController {
     let picker = UIImagePickerController()
     var imageURL: URL?
     var entranceToken = 0
-    //##########임시##############
-    var writer = "greenSky"
+    //########################
+    var writer = Share.userNickName
     //###########################
     var deliveredFeedModel: FeedModel?
     var deliveredFeedImageModle: FeedImageModel?
+    
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,22 @@ class FeedAddViewController: UIViewController {
         if entranceToken == 1 {
             loadData()
         }
+        
+        setViewItem()
+    }
+    
+    func setViewItem(){
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        tvContent.layer.borderWidth = 1
+        tvContent.layer.borderColor = pointColor.cgColor
+        tvContent.layer.cornerRadius = 8.0
+        tfHashTag.layer.borderWidth = 1
+        tfHashTag.layer.borderColor = pointColor.cgColor
+        tfHashTag.layer.cornerRadius = 8.0
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     //FeedViewController의 FeedListTable cell 클릭으로 이동했을경우 실행
@@ -246,6 +265,9 @@ extension FeedAddViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.lblHashTag.text = "#\(hashTagList[indexPath.row])"
         cell.lblHashTag.numberOfLines = 1
         cell.lblHashTag.setTextView()
+        cell.layer.cornerRadius = 4
+        cell.layer.backgroundColor = pointColor.cgColor
+        cell.lblHashTag.textColor = UIColor.white
         return cell
     }
 
