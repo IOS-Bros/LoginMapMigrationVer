@@ -8,7 +8,7 @@
 import Foundation
 
 class Common{
-    static let ipAddr = "192.168.0.12"
+    static let ipAddr = "192.168.0.11"
     static let jspPath = "http://\(ipAddr):8080/dogtor/"
     static let feedImagePath = "http://\(ipAddr):8080/dogtor/feedImage/"
     static let writerImagePath = "http://\(ipAddr):8080/dogtor/userImage/"

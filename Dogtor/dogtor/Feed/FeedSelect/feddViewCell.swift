@@ -13,6 +13,7 @@ class feddViewCell: UITableViewCell {
     
     var feedModel: FeedModel?
     var feedImageModel: FeedImageModel?
+    
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var writerImage: UIImageView!
     @IBOutlet weak var writerName: UILabel!
@@ -52,7 +53,8 @@ class feddViewCell: UITableViewCell {
         self.layoutIfNeeded()
     }
 
-}
+    
+} // feedViewCell
 
 extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,5 +72,4 @@ extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
         cell.lblHashTag.setTextView()
         return cell
     }
-    
 }

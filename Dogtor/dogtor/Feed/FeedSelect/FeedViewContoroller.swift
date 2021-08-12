@@ -10,8 +10,10 @@ class FeedViewContoroller: UIViewController {
 
     @IBOutlet var feedListTableView: UITableView!
     @IBOutlet weak var tfSearch: UITextField!
+    
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
+    
     
     //####################################
     let loginedUserid = "greenSky"
@@ -92,6 +94,15 @@ class FeedViewContoroller: UIViewController {
             print("[feedImageModel]")
             cell.feedImageModel?.printAll()
         }
+        if segue.identifier == "commentSegue" {
+            let button = sender as! UIButton
+            let contentView = button.superview
+            let cell = contentView?.superview as! feddViewCell
+            let fNo = cell.feedModel?.fNo
+            let goComment = segue.destination as! CommentViewController
+            goComment.receiveFNo(fNo: fNo!)
+            
+        }
     }
     
 }
@@ -128,7 +139,7 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         return feedItem.count
     }
     
-    
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedListTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! feddViewCell
