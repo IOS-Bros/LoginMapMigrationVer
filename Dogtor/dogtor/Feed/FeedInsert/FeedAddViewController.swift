@@ -242,7 +242,11 @@ extension FeedAddViewController: UICollectionViewDataSource, UICollectionViewDel
         let cell = hastTagCollectionView.dequeueReusableCell(withReuseIdentifier: "hashTagCell", for: indexPath) as! FeedAddCollectionViewCell
         
         cell.backgroundColor = .lightGray
+        cell.lblHashTag.numberOfLines = 1
+        cell.lblHashTag.translatesAutoresizingMaskIntoConstraints = false
         cell.lblHashTag.text = "#\(hashTagList[indexPath.row])"
+        cell.lblHashTag.numberOfLines = 1
+        cell.lblHashTag.setTextView()
         return cell
     }
 

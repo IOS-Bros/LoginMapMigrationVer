@@ -16,17 +16,20 @@ class FeedViewContoroller: UIViewController {
     let loginedUserid = "greenSky"
     //####################################
     
+    //cell생성시 호출하면 셀 개수만큼 인스턴스가 생성되므로 미리 선언
+    let feedWriterDataSelectModel = FeedWriterDataSelectModel()
+    
     
     // MARK: - function
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //이후 수정
-        feedListTableView.rowHeight = 400
-        feedListTableView.estimatedRowHeight = 400
-
         feedListTableView.delegate = self
         feedListTableView.dataSource = self
+        
+        feedListTableView.rowHeight = UITableView.automaticDimension
+        feedListTableView.estimatedRowHeight = 400
         
         tableDataLoad()
     } //viewDidLoad
@@ -65,12 +68,15 @@ class FeedViewContoroller: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
+        // Get the new view coself.feedWriterDataSelectModel.requestWirterImage(item)ntroller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "modifyFeedSegue"{
             let cell = sender as! feddViewCell // 몇번째 cell 인지
             let detailView = segue.destination as! FeedAddViewController
-            detailView.recieveItems(feedModel: cell.feedModel!, feedImageModel: cell.feedImageModel!)
+            guard let feedImageModel = cell.feedImageModel else {
+                return
+            }
+            detailView.recieveItems(feedModel: cell.feedModel!, feedImageModel: feedImageModel)
             print("[feedModel]")
             cell.feedModel?.printAllFromSelectModel()
             print("---------------------------")
@@ -105,6 +111,10 @@ extension FeedViewContoroller: FeedImageSelectAllModelProtocol{
 
 extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedItem.count
     }
@@ -113,11 +123,13 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         let cell = feedListTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! feddViewCell
         
         let item: FeedModel = feedItem[indexPath.row] as! FeedModel
-        
         cell.feedModel = item
         cell.writerName.text = item.fWriter
         cell.submitDate.text = item.fSubmitDate
+        cell.content.numberOfLines = 0
+        cell.content.translatesAutoresizingMaskIntoConstraints = true
         cell.content.text = item.fContent
+        cell.content.setTextView()
         
         let hashTagStrs = item.fHashTag
         cell.hashTagList.removeAll()
@@ -131,15 +143,42 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
             cell.hashTagCollectionView.reloadData()
         }
         
-        //이미지 검색
+        //피드이미지 검색
         loadImage(item: item, cell: cell)
         print("\(indexPath.row)번째 셀의 데이터")
         item.printAllFromSelectModel()
+        
+        //작성자 이미지 검색
+        loadWriterImage(item: item, cell: cell)
         
         //선택시 회색배경처리되는거 제거
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    func loadWriterImage(item: FeedModel, cell: feddViewCell){
+        DispatchQueue.global().async {
+            self.feedWriterDataSelectModel.requestWirterImage(nickName: item.fWriter, completion: {data in
+                guard let imageName = data else {
+                    return
+                }
+                
+                var imagePath: String
+                if imageName.contains("http") {
+                    imagePath = imageName
+                } else {
+                    
+                    imagePath = Common.writerImagePath + imageName
+                }
+                print("writer image full path : \(imagePath)")
+                guard let url = URL(string: imagePath) else { return }
+        
+                DispatchQueue.main.async {
+                    cell.writerImage.kf.setImage(with: url)
+                }
+            })
+        }
     }
     
     func loadImage(item: FeedModel, cell: feddViewCell) {
@@ -160,4 +199,12 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
             }
         }
     }
+    
 }//FeedViewContoroller: UITableViewDelegate, UITableViewDataSource
+
+extension UILabel {
+    func setTextView() {
+        self.translatesAutoresizingMaskIntoConstraints = true
+        self.sizeToFit()
+    }
+}

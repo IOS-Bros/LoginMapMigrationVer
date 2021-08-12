@@ -24,6 +24,7 @@ class feddViewCell: UITableViewCell {
         super.awakeFromNib()
         hashTagCollectionView.delegate = self
         hashTagCollectionView.dataSource = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,7 +49,11 @@ extension feddViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
         let cell = hashTagCollectionView.dequeueReusableCell(withReuseIdentifier: "feedHashTagCell", for: indexPath) as! HashTagCollectionViewCell
         
         cell.backgroundColor = .lightGray
+        cell.lblHashTag.numberOfLines = 1
+        cell.lblHashTag.translatesAutoresizingMaskIntoConstraints = true
         cell.lblHashTag.text = "#\(hashTagList[indexPath.row])"
+        cell.lblHashTag.numberOfLines = 1
+        cell.lblHashTag.setTextView()
         return cell
     }
 }
