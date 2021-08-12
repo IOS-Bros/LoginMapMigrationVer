@@ -8,6 +8,8 @@
 import UIKit
 
 class AddPetViewController: UIViewController {
+    
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
 
     @IBOutlet weak var dangImage: UIImageView!
     var imageURL: URL?
@@ -27,6 +29,25 @@ class AddPetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dangName.layer.borderWidth = 1
+        dangName.layer.cornerRadius = 8.0
+        dangName.layer.borderColor = pointColor.cgColor
+        dangSpecies.layer.borderWidth = 1
+        dangSpecies.layer.cornerRadius = 8.0
+        dangSpecies.layer.borderColor = pointColor.cgColor
+        dangAge.layer.borderWidth = 1
+        dangAge.layer.cornerRadius = 8.0
+        dangAge.layer.borderColor = pointColor.cgColor
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        dangGender.backgroundColor = .white
+        dangGender.selectedSegmentTintColor = pointColor
+        dangGender.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+        dangGender.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        
+        dangImage.layer.cornerRadius = 40
 
         // Do any additional setup after loading the view.
         
@@ -41,7 +62,7 @@ class AddPetViewController: UIViewController {
         dangGender.addTarget(self, action: #selector(segChanged(segCon:)), for: UIControl.Event.valueChanged)
         picker.delegate = self
         
-        imageURL = URL(string: "http://localhost:8080/dogtor/image/pin.png")
+        imageURL = URL(string: "http://localhost:8080/dogtor/image/dog-plus.png")
         let data = try? Data(contentsOf: imageURL!)
         dangImage.image = UIImage(data: data!)
        

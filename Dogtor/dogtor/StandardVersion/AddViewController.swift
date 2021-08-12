@@ -33,6 +33,7 @@ class AddViewController: UIViewController {
         tfTitle.layer.borderColor = pointColor.cgColor
         tfContext.layer.borderWidth = 1
         tfContext.layer.borderColor = pointColor.cgColor
+        tfContext.layer.cornerRadius = 8.0
         
     }
     
