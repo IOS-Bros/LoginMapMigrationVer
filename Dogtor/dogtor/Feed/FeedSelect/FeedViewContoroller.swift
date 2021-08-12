@@ -73,7 +73,10 @@ class FeedViewContoroller: UIViewController {
         if segue.identifier == "modifyFeedSegue"{
             let cell = sender as! feddViewCell // 몇번째 cell 인지
             let detailView = segue.destination as! FeedAddViewController
-            detailView.recieveItems(feedModel: cell.feedModel!, feedImageModel: cell.feedImageModel!)
+            guard let feedImageModel = cell.feedImageModel else {
+                return
+            }
+            detailView.recieveItems(feedModel: cell.feedModel!, feedImageModel: feedImageModel)
             print("[feedModel]")
             cell.feedModel?.printAllFromSelectModel()
             print("---------------------------")
