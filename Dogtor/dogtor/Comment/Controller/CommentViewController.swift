@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-var commentArray: NSMutableArray = NSMutableArray()
-var fNo = 1
-var ipAdd = "192.168.0.11"
+import Kingfisher
 
 class CommentViewController: UIViewController, UITextViewDelegate {
 
@@ -19,11 +16,17 @@ class CommentViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var commentAddButton: UIButton!
     
+    var commentArray: NSMutableArray = NSMutableArray()
+    var commentImageArray: NSMutableArray = NSMutableArray()
+    
     var cNo = 0
     var cSubmitDate = ""
-    var cWriter = "DDD"
+    var cWriter = Share.userNickName
+    var cNickName = ""
     var cContent = ""
     var fNo = 0
+    
+    var commentSelectWriterImage = CommentSelectWriterImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,7 +193,7 @@ class CommentViewController: UIViewController, UITextViewDelegate {
     func scrollToBottom(){
     
            DispatchQueue.main.async {
-            let indexPath = IndexPath(row: commentArray.count - 1, section: 0)
+            let indexPath = IndexPath(row: self.commentArray.count - 1, section: 0)
                self.tbComment.scrollToRow(at: indexPath, at: .bottom, animated: true)
             print("Scroll Down")
            }
@@ -233,9 +236,53 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
         
         let comment: CommentDBModel = commentArray[indexPath.row] as! CommentDBModel
         
+        
+        // 불러온 댓글에 있는 각자 이름
+        cNickName = cell.lblCWriter.text!
+        
         cell.lblCWriter.text = comment.cWriter
         cell.tvComment.text = comment.cContent
-        cell.imgProfile.image = UIImage(named: "flower_01.png")
+        
+        let commentImageSelct = CommentImageSelectModel()
+        commentImageSelct.delegate = self
+        commentImageSelct.getCommentImage(cNickName: cNickName)
+        
+        let commentImage : CommentImageModel = commentImageArray[indexPath.row] as! CommentImageModel
+        
+//        cell.imgProfile.image = UIImage
+        
+        //작성자 이미지 검색
+        loadCommentWriterImage(item: commentImage, cell: cell)
+        
+        //선택시 회색배경처리되는거 제거
+        cell.selectionStyle = .none
+        
+        // 킹피셔 라이브러리
+        func loadCommentWriterImage(item: CommentImageModel, cell: CommentTableViewCell){
+            DispatchQueue.global().async {
+                self.commentSelectWriterImage.requestCommentWirterImage(nickName: self.cNickName, completion: {data in
+                    guard let imageName = data else {
+                        return
+                    }
+                    
+                    var imagePath: String
+                        imagePath = imageName
+                   
+                    print("writer image full path : \(imagePath)")
+                    guard let url = URL(string: imagePath) else { return }
+            
+                    DispatchQueue.main.async {
+                        cell.imgProfile.kf.setImage(with: url)
+                        cell.imgProfile.layer.cornerRadius = 7.5
+                    }
+                })
+            }
+        }
+        
+
+        
+        
+//        cell.imgProfile.image = UIImage(named: "flower_01.png")
         
         return cell
     }
@@ -257,7 +304,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
                 if result == true{
                     let resultAlert = UIAlertController(title: "완료", message: "삭제가 완료됐습니다", preferredStyle: .alert)
                     let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
-                        commentArray.removeObject(at: indexPath.row)
+                        self.commentArray.removeObject(at: indexPath.row)
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     })
                     
@@ -306,9 +353,18 @@ extension UIView{
 extension CommentViewController : CommentSelectProtocol{
     func commentDownload(comment: NSArray) {
         commentArray = comment as! NSMutableArray
-        self.tbComment.reloadData()
+        
     }
 } // SelectProtocol
+
+extension CommentViewController: CommenteSelectModelProtocol{
+    func CommentImageDownloaded(items: NSMutableArray) {
+        commentImageArray = items as! NSMutableArray
+        self.tbComment.reloadData()
+    }
+    
+    
+}
 
 extension CommentViewController : CommentInsertProtocol{
     func insertDownload(comment: NSArray) {
