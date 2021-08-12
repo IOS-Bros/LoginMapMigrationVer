@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginInsertViewController: UIViewController {
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tfNicName: UITextField!
     
@@ -22,14 +24,19 @@ class LoginInsertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         print("LoginInsertViewController")
         print("LoginInsertViewController - UserEmail : \(Share.userEmail)")
 
         do {
             let data = try Data(contentsOf: receiveUserImageURL!)
             imageView.image = UIImage(data: data)
+            imageView.layer.cornerRadius = 75
         } catch { }
-
+        
+        tfNicName.layer.borderWidth = 1
+        tfNicName.layer.cornerRadius = 8.0
+        tfNicName.layer.borderColor = pointColor.cgColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

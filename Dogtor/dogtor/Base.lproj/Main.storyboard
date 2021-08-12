@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ge-y8-SVH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,11 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ugq-93-alY">
-                                <rect key="frame" x="87" y="303" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aWn-YQ-eQe">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,7 +49,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="main_table_cell" textLabel="iXt-nP-3yd" style="IBUITableViewCellStyleDefault" id="EX4-E4-bJX">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EX4-E4-bJX" id="ndk-jT-3GQ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -96,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="캘린더" id="LDu-td-qVi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="k3r-1H-wdY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="aL5-33-wRm" kind="show" identifier="addSegue" id="BXA-Fg-WvZ"/>
                             </connections>
@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="48.883928571428569"/>
         </scene>
-        <!--Modify-->
+        <!--Detail View Controller-->
         <scene sceneID="Pzu-9R-Dsi">
             <objects>
                 <viewController id="nV4-lU-MMb" customClass="DetailViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                                     <action selector="changeDatePicker:" destination="nV4-lU-MMb" eventType="valueChanged" id="uo0-h9-Uuq"/>
                                 </connections>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-8s-7Cs">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력해주세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-8s-7Cs">
                                 <rect key="frame" x="20" y="236" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -136,7 +136,6 @@
                                 <rect key="frame" x="20" y="296" width="374" height="304"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -145,8 +144,8 @@
                         <viewLayoutGuide key="safeArea" id="Nj2-TY-nc1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Modify" id="vyc-aN-ZoO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZLT-d3-2T2">
+                    <navigationItem key="navigationItem" id="vyc-aN-ZoO">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="ZLT-d3-2T2">
                             <connections>
                                 <action selector="barBtnModify:" destination="nV4-lU-MMb" id="Do6-W8-E9E"/>
                             </connections>
@@ -162,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="3633" y="324"/>
         </scene>
-        <!--Add-->
+        <!--Add View Controller-->
         <scene sceneID="teH-yA-ddc">
             <objects>
                 <viewController id="aL5-33-wRm" customClass="AddViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +177,7 @@
                                     <action selector="changeDatePicker:" destination="aL5-33-wRm" eventType="valueChanged" id="CoH-fb-EhB"/>
                                 </connections>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlU-0B-VeT">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력해주세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlU-0B-VeT">
                                 <rect key="frame" x="20" y="244" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -188,7 +187,6 @@
                                 <rect key="frame" x="20" y="304" width="374" height="304"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -197,8 +195,8 @@
                         <viewLayoutGuide key="safeArea" id="LWk-Rg-d0b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="lWH-gE-Iap">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xOJ-hW-wjo">
+                    <navigationItem key="navigationItem" id="lWH-gE-Iap">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="xOJ-hW-wjo">
                             <connections>
                                 <action selector="barBtnSubmit:" destination="aL5-33-wRm" id="xLm-ZW-pOl"/>
                             </connections>
@@ -218,7 +216,7 @@
         <scene sceneID="db5-lT-lFl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isT-pw-kmr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="kIk-mB-nUu"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="kIk-mB-nUu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mG6-dL-Q5I">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -243,6 +241,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="isT-pw-kmr" kind="relationship" relationship="viewControllers" id="S1Y-AV-5sG"/>
@@ -292,7 +291,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="389" id="fhN-Z0-jGq" customClass="feddViewCell" customModule="dogtor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="389"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="389"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fhN-Z0-jGq" id="2Xv-0i-w13">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="389"/>
@@ -599,7 +598,7 @@
         <scene sceneID="EKj-yI-06t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oda-Y3-8L8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="병원" id="bvj-HL-6I7"/>
+                    <tabBarItem key="tabBarItem" title="병원" image="map" catalog="system" id="bvj-HL-6I7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jVJ-IS-ngh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -618,7 +617,7 @@
         <scene sceneID="ZiF-ak-5Mw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TeR-rk-97X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="피드" id="XCd-H4-3Yw"/>
+                    <tabBarItem key="tabBarItem" title="피드" image="list.bullet.rectangle" catalog="system" id="XCd-H4-3Yw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mSg-24-m0f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -633,7 +632,7 @@
             </objects>
             <point key="canvasLocation" x="1064" y="1517"/>
         </scene>
-        <!--내정보-->
+        <!--Dogtor-->
         <scene sceneID="e63-fL-Ll8">
             <objects>
                 <viewController id="HJR-N1-ere" customClass="LoginViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
@@ -641,36 +640,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzm-zU-nCL">
-                                <rect key="frame" x="20" y="339" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzm-zU-nCL">
+                                <rect key="frame" x="105" y="624" width="204" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Google Login"/>
+                                <state key="normal" image="btn_google"/>
                                 <connections>
                                     <action selector="btnGoogle:" destination="HJR-N1-ere" eventType="touchUpInside" id="Cb8-ZU-05m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-go-xVv">
-                                <rect key="frame" x="20" y="404" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-go-xVv">
+                                <rect key="frame" x="105" y="689" width="204" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Kakao Login"/>
+                                <state key="normal" image="btn_kakao"/>
                                 <connections>
                                     <action selector="btnKaKao:" destination="HJR-N1-ere" eventType="touchUpInside" id="fWx-mN-MGh"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login-image" translatesAutoresizingMaskIntoConstraints="NO" id="Yah-3T-Qwk">
+                                <rect key="frame" x="45" y="118" width="325" height="465"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copyright © Dogtor. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgV-am-DnR">
+                                <rect key="frame" x="20" y="819" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nb-TY-5rs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="내정보" id="pOH-8E-aGI"/>
+                    <navigationItem key="navigationItem" title="Dogtor" id="pOH-8E-aGI"/>
                     <connections>
                         <segue destination="G34-Vl-rDQ" kind="show" identifier="firstLogin" id="73W-vf-1hB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH4-Db-2ha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871" y="-658"/>
+            <point key="canvasLocation" x="-871.01449275362324" y="-658.25892857142856"/>
         </scene>
         <!--Login Insert View Controller-->
         <scene sceneID="9Pv-Ug-xQi">
@@ -681,26 +691,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-os-NZc">
-                                <rect key="frame" x="87" y="152" width="240" height="128"/>
+                                <rect key="frame" x="132" y="134" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-cV-j7g">
-                                <rect key="frame" x="173" y="315" width="140" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임을 입력해주세요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-cV-j7g">
+                                <rect key="frame" x="51" y="318" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88M-Jh-71c">
-                                <rect key="frame" x="101" y="322" width="45" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C2-Bj-AcA">
+                                <rect key="frame" x="139" y="385" width="137" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C2-Bj-AcA">
-                                <rect key="frame" x="181" y="366" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="중복확인"/>
+                                <state key="normal" image="btn_du"/>
                                 <connections>
                                     <action selector="btnDuplicateCheck:" destination="G34-Vl-rDQ" eventType="touchUpInside" id="gCQ-Nk-h5g"/>
                                 </connections>
@@ -710,7 +713,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="JCf-dH-u9l">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mqm-3j-BrC">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="mqm-3j-BrC">
                             <connections>
                                 <action selector="btnFinish:" destination="G34-Vl-rDQ" id="6da-uJ-vTe"/>
                             </connections>
@@ -723,13 +726,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81j-jp-QBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="-658"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="-658.25892857142856"/>
         </scene>
         <!--내정보-->
         <scene sceneID="0Ce-ae-X0y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vbI-VE-7xO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="내정보" id="qCe-DV-daP"/>
+                    <tabBarItem key="tabBarItem" title="내정보" image="person.fill" catalog="system" id="qCe-DV-daP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ic4-5h-xRp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -758,7 +761,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dca-LP-Te2">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dca-LP-Te2" id="Cd2-aE-AzN">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -791,7 +794,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NC8-0c-6nL">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NC8-0c-6nL" id="fCC-GT-k1x">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -824,7 +827,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bSb-HH-NT7">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSb-HH-NT7" id="6fC-7o-YUT">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -851,19 +854,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4G-fO-lRl">
-                                <rect key="frame" x="141" y="99" width="130" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YC-1J-uAo">
-                                <rect key="frame" x="20" y="236" width="374" height="21"/>
+                                <rect key="frame" x="20" y="278" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xy6-MW-BPP">
-                                <rect key="frame" x="20" y="282" width="168" height="100"/>
+                                <rect key="frame" x="20" y="324" width="168" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-2s-pSh">
@@ -884,7 +883,7 @@
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWO-74-LJX">
-                                <rect key="frame" x="226" y="282" width="168" height="100"/>
+                                <rect key="frame" x="226" y="324" width="168" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbT-FF-cgD">
@@ -905,7 +904,7 @@
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-bK-NjD">
-                                <rect key="frame" x="20" y="407" width="374" height="128"/>
+                                <rect key="frame" x="20" y="449" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JMC-Cy-dx9">
@@ -956,17 +955,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8l-1q-6B8">
-                                                    <rect key="frame" x="43" y="36" width="42" height="38"/>
+                                                    <rect key="frame" x="43" y="30" width="42" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="댕댕추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxs-9v-q2m">
-                                                    <rect key="frame" x="38" y="82" width="59" height="21"/>
+                                                    <rect key="frame" x="35" y="76" width="59" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -983,14 +982,14 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내 게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTb-Qb-scf">
-                                <rect key="frame" x="20" y="586" width="258" height="21"/>
+                                <rect key="frame" x="20" y="628" width="258" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZS-Rx-55i">
-                                <rect key="frame" x="320" y="581" width="74" height="30"/>
+                                <rect key="frame" x="320" y="623" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="n건"/>
@@ -999,14 +998,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="댓글단 글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azD-de-LjK">
-                                <rect key="frame" x="20" y="637" width="258" height="21"/>
+                                <rect key="frame" x="20" y="679" width="258" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq5-0h-OKo">
-                                <rect key="frame" x="320" y="632" width="74" height="30"/>
+                                <rect key="frame" x="320" y="674" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="n건"/>
@@ -1015,14 +1014,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="'좋아요'한 글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz8-J9-E3m">
-                                <rect key="frame" x="20" y="688" width="258" height="21"/>
+                                <rect key="frame" x="20" y="730" width="258" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adq-m4-g9t">
-                                <rect key="frame" x="320" y="683" width="74" height="30"/>
+                                <rect key="frame" x="320" y="725" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="n건"/>
@@ -1030,6 +1029,10 @@
                                     <segue destination="wI2-8y-tvt" kind="show" id="3uJ-UF-wZq"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4G-fO-lRl">
+                                <rect key="frame" x="132" y="120" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FbK-sV-GVN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1105,22 +1108,22 @@
                                     <segment title="중성화"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tornado" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-E0-G3M">
-                                <rect key="frame" x="136" y="129.5" width="142" height="149"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0PN-lU-qLj">
                                 <rect key="frame" x="100" y="396.5" width="294" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog-plus" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-E0-G3M">
+                                <rect key="frame" x="132" y="126.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ofZ-OP-2ra"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cgy-9i-WbK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="2Hh-Dd-v5g">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="2Hh-Dd-v5g">
                             <connections>
                                 <action selector="ModifyDang:" destination="ene-wz-KPe" id="ZAn-a1-yja"/>
                             </connections>
@@ -1138,7 +1141,7 @@
             </objects>
             <point key="canvasLocation" x="3061" y="2252"/>
         </scene>
-        <!--댕댕추가-->
+        <!--Add Pet View Controller-->
         <scene sceneID="aGM-XN-QUn">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="xdr-lK-T9Z" customClass="AddPetViewController" customModule="dogtor" sceneMemberID="viewController">
@@ -1195,22 +1198,22 @@
                                     <segment title="중성화"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tornado" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-0p-BhZ">
-                                <rect key="frame" x="136" y="119.5" width="142" height="149"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yj4-7W-WCk">
                                 <rect key="frame" x="100" y="387" width="294" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog-plus" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-0p-BhZ">
+                                <rect key="frame" x="132" y="128" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8xR-r3-bcy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="댕댕추가" id="out-om-hrj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KIq-0t-n1k">
+                    <navigationItem key="navigationItem" id="out-om-hrj">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="KIq-0t-n1k">
                             <connections>
                                 <action selector="AddDangInfo:" destination="xdr-lK-T9Z" id="ujc-d6-YxO"/>
                             </connections>
@@ -1245,7 +1248,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="location" catalog="system"/>
+                                <state key="normal" image="location"/>
                                 <state key="highlighted" image="location" catalog="system"/>
                                 <connections>
                                     <action selector="btnMyLoc:" destination="Fse-Pj-cti" eventType="touchUpInside" id="XEN-ih-xgk"/>
@@ -1325,10 +1328,20 @@
         <segue reference="qSv-Zh-oYA"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="btn_du" width="137" height="42"/>
+        <image name="btn_google" width="204" height="42"/>
+        <image name="btn_kakao" width="204" height="42"/>
+        <image name="dog-plus" width="425" height="425"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location" width="500" height="500"/>
+        <image name="login-image" width="921" height="1318"/>
+        <image name="logo" width="145" height="178"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
-        <image name="tornado" catalog="system" width="118" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1340,9 +1353,6 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

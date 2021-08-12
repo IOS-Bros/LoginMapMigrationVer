@@ -9,6 +9,8 @@ import UIKit
 
 class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
     
+    let pointColor : UIColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+    
     @IBOutlet weak var dangView: UICollectionView!
     
     @IBOutlet weak var myPageImage: UIImageView!
@@ -25,6 +27,9 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(displayP3Red: 99/255, green: 197/255, blue: 148/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 
         print("MyPageViewController - UserEmail : \(Share.userEmail)")
 
@@ -35,12 +40,13 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
         print("MyPageViewController의 닉네임 : \(Share.userNickName)")
         
         // 풀어줘야함!!!!!!!!!!
-//        do {
-//            let data = try Data(contentsOf: Share.userImage!)
-//            myPageImage.image = UIImage(data: data)
-//        } catch { }
-//        myPageNickName.text = Share.userNickName
-//
+        do {
+            let data = try Data(contentsOf: Share.userImage!)
+            myPageImage.image = UIImage(data: data)
+            myPageImage.layer.cornerRadius = 75
+        } catch { }
+        myPageNickName.text = Share.userNickName
+
        
     }
     
@@ -122,9 +128,8 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
                 return UICollectionViewCell()
             }
             
-            cell.backgroundColor = UIColor.lightGray
             cell.layer.borderWidth = 1.0
-            cell.layer.borderColor = UIColor.darkGray.cgColor
+            cell.layer.borderColor = pointColor.cgColor
             cell.layer.cornerRadius = 4
             
             return cell
@@ -142,7 +147,7 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
             cell.backgroundColor = UIColor.white
             
             cell.layer.borderWidth = 1.0
-            cell.layer.borderColor = UIColor.darkGray.cgColor
+            cell.layer.borderColor = pointColor.cgColor
             cell.layer.cornerRadius = 4
             
             // LongPressGesture cell
