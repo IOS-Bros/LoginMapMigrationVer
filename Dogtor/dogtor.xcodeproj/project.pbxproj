@@ -54,6 +54,8 @@
 		8053A24926C53A60007874F6 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24126C53A5F007874F6 /* SQLite.swift */; };
 		8053A24A26C53A60007874F6 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24226C53A5F007874F6 /* ToDoModel.swift */; };
 		8053A24B26C53A60007874F6 /* DateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24426C53A5F007874F6 /* DateHandling.swift */; };
+		BDAA364226C5C47F0036BD76 /* CommentImageSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAA364126C5C47F0036BD76 /* CommentImageSelectModel.swift */; };
+		BDAA364426C5C7E20036BD76 /* CommentImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAA364326C5C7E20036BD76 /* CommentImageModel.swift */; };
 		BDB3ED3E26C5AE590076D69E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3ED3D26C5AE590076D69E /* CommentTableViewCell.swift */; };
 		BDB3ED4026C5AE610076D69E /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3ED3F26C5AE610076D69E /* CommentViewController.swift */; };
 		BDB3ED4526C5AE6F0076D69E /* CommentSelectQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB3ED4126C5AE6F0076D69E /* CommentSelectQueryModel.swift */; };
@@ -81,6 +83,8 @@
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertModel.swift; sourceTree = "<group>"; };
 		04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewController.swift; sourceTree = "<group>"; };
+		0F4BC304069C5A417F9B9A36 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17907E66EABBF44B9D3627BE /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 		1F9D145426BB939100F22C6D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		1F9D145826BC2C1300F22C6D /* CheckPetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPetInfoModel.swift; sourceTree = "<group>"; };
 		1F9D145A26BC2F0200F22C6D /* PetDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDBModel.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		8053A24226C53A5F007874F6 /* ToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		8053A24426C53A5F007874F6 /* DateHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHandling.swift; sourceTree = "<group>"; };
 		B8CDC8A0B74AB2C4ECF7F47A /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
+		BDAA364126C5C47F0036BD76 /* CommentImageSelectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentImageSelectModel.swift; sourceTree = "<group>"; };
+		BDAA364326C5C7E20036BD76 /* CommentImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentImageModel.swift; sourceTree = "<group>"; };
 		BDB3ED3D26C5AE590076D69E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		BDB3ED3F26C5AE610076D69E /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		BDB3ED4126C5AE6F0076D69E /* CommentSelectQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSelectQueryModel.swift; sourceTree = "<group>"; };
@@ -323,9 +329,27 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		B3CCAE057333A9687D734BEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F4BC304069C5A417F9B9A36 /* Pods_dogtor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDAA364526C5C7F20036BD76 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				BDAA364126C5C47F0036BD76 /* CommentImageSelectModel.swift */,
+				BDAA364326C5C7E20036BD76 /* CommentImageModel.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		BDB3ED3926C5ADA40076D69E /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				BDAA364526C5C7F20036BD76 /* Image */,
 				BDB3ED3C26C5AE310076D69E /* Controller */,
 				BDB3ED3B26C5AE2C0076D69E /* Model */,
 				BDB3ED3A26C5AE260076D69E /* Cell */,
@@ -515,6 +539,8 @@
 				8053A24A26C53A60007874F6 /* ToDoModel.swift in Sources */,
 				803EBB3D26C3BF3B00D5D350 /* feddViewCell.swift in Sources */,
 				803EBB4326C3BF3B00D5D350 /* FeedAddCollectionViewCell.swift in Sources */,
+				BDAA364226C5C47F0036BD76 /* CommentImageSelectModel.swift in Sources */,
+				BDAA364426C5C7E20036BD76 /* CommentImageModel.swift in Sources */,
 				04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */,
 				8053A24826C53A60007874F6 /* DetailViewController.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,

@@ -25,6 +25,7 @@ class CommentDBModel: NSObject{
         
     }
    
+   
     func printAll(){
         print("no : \(cNo), writer : \(cWriter), content : \(cContent), submitdate : \(cSubmitDate)")
     }
