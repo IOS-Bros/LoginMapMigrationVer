@@ -55,6 +55,7 @@
 		8053A24926C53A60007874F6 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24126C53A5F007874F6 /* SQLite.swift */; };
 		8053A24A26C53A60007874F6 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24226C53A5F007874F6 /* ToDoModel.swift */; };
 		8053A24B26C53A60007874F6 /* DateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053A24426C53A5F007874F6 /* DateHandling.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -314,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				247EEAB8C4957B6F206507ED /* Pods-dogtor.debug.xcconfig */,
-				12DAB877AE9E3CF1AB18FC66 /* Pods-dogtor.release.xcconfig */,
+				12DAB877AE9E3CF1AB18FC66 /* Pods-dogtor.release.xcconfig */
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -393,6 +394,23 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBB853289443C7A648AD4E09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
@@ -407,23 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBB853289443C7A648AD4E09 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
