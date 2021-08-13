@@ -49,6 +49,7 @@ class feddViewCell: UITableViewCell {
         self.content.translatesAutoresizingMaskIntoConstraints = false
         self.content.numberOfLines = 0
         self.updateLayout()
+        self.hashTagCollectionView.reloadData()
     }
     
     func updateLayout(){

@@ -149,7 +149,6 @@ extension MyPageViewController: UICollectionViewDelegateFlowLayout, UICollection
             cell.layer.borderWidth = 1.0
             cell.layer.borderColor = pointColor.cgColor
             cell.layer.cornerRadius = 4
-            
             // LongPressGesture cell
             let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
             lpgr.minimumPressDuration = 0.3

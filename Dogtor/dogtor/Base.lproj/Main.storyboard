@@ -1005,7 +1005,7 @@
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="n건"/>
                                 <connections>
-                                    <segue destination="uLk-sh-4WT" kind="show" id="rKG-Cz-Wj6"/>
+                                    <segue destination="sAW-0n-hUK" kind="show" id="K1S-WK-NTK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="댓글단 글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azD-de-LjK">
@@ -1484,6 +1484,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qSv-Zh-oYA"/>
+        <segue reference="K1S-WK-NTK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="btn_du" width="137" height="42"/>
