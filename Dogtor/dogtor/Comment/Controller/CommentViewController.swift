@@ -32,21 +32,23 @@ class CommentViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         receiveFNo(fNo: fNo)
+        print(fNo)
         // cell 불러오기
         let commentSelectModel = CommentSelectModel()
         commentSelectModel.delegate = self
         commentSelectModel.getComment(fNo: fNo)
         print("Data Selcted")
-        
+    
         delayTime()
         scrollView.isScrollEnabled = false
         textViewProperty()
         // Dynamic Heigh of UIVIew
         insertView.setView()
-        insertView.resignFirstResponder()
+//        insertView.resignFirstResponder()
         
         cellPropertySetting()   // cell dynamic Height & others property
                      
+        print("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ")
         
         //Keyboard Handling
             // keyboardShow
@@ -238,55 +240,51 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         // 불러온 댓글에 있는 각자 이름
-        cNickName = cell.lblCWriter.text!
-        
         cell.lblCWriter.text = comment.cWriter
-        cell.tvComment.text = comment.cContent
+        cell.tvComment.text = comment.cContent!
         
-        let commentImageSelct = CommentImageSelectModel()
-        commentImageSelct.delegate = self
-        commentImageSelct.getCommentImage(cNickName: cNickName)
-        
-        let commentImage : CommentImageModel = commentImageArray[indexPath.row] as! CommentImageModel
-        
-//        cell.imgProfile.image = UIImage
-        
-        //작성자 이미지 검색
-        loadCommentWriterImage(item: commentImage, cell: cell)
+        cNickName = cell.lblCWriter.text!
+        print("Writer : \(cell.lblCWriter.text!) , Cotent: \(cell.tvComment.text!) ")
         
         //선택시 회색배경처리되는거 제거
         cell.selectionStyle = .none
         
+        loadCommentWriterImage(cell: cell)
+        return cell
+    }
+        
+//        let commentImage : CommentImageModel = commentImageArray[indexPath.row] as! CommentImageModel
+        
+//        cell.imgProfile.image = UIImage
+        
+        //작성자 이미지 검색
+//        loadCommentWriterImage(item: commentImage, cell: cell)
+        
+       
+        
         // 킹피셔 라이브러리
-        func loadCommentWriterImage(item: CommentImageModel, cell: CommentTableViewCell){
+        func loadCommentWriterImage(cell: CommentTableViewCell){
             DispatchQueue.global().async {
-                self.commentSelectWriterImage.requestCommentWirterImage(nickName: self.cNickName, completion: {data in
-                    guard let imageName = data else {
-                        return
-                    }
+//                self.commentSelectWriterImage.requestCommentWirterImage(nickName: self.cNickName, completion: {data in
+//                    guard let imageName = data else {
+//                        return
+//                    }
+                
+                let commentImageSelct = CommentImageSelectModel()
+                commentImageSelct.delegate = self
+                commentImageSelct.getCommentImage(cNickName: cell.lblCWriter.text! ,complation: {action in
+                    print("# # # # # # # # # # # ", action!)
+                    guard let url = URL(string: action!) else { return }
                     
-                    var imagePath: String
-                        imagePath = imageName
-                   
-                    print("writer image full path : \(imagePath)")
-                    guard let url = URL(string: imagePath) else { return }
-            
                     DispatchQueue.main.async {
                         cell.imgProfile.kf.setImage(with: url)
                         cell.imgProfile.layer.cornerRadius = 7.5
                     }
                 })
             }
-        }
         
+    };
 
-        
-        
-//        cell.imgProfile.image = UIImage(named: "flower_01.png")
-        
-        return cell
-    }
-    
     // 스와이프해서 셀 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
@@ -328,9 +326,8 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "삭제"
     }
-    
-    
-} // UITableView extension
+}
+// UITableView extension
 
 
 extension UITextView {
@@ -353,14 +350,14 @@ extension UIView{
 extension CommentViewController : CommentSelectProtocol{
     func commentDownload(comment: NSArray) {
         commentArray = comment as! NSMutableArray
-        
+        self.tbComment.reloadData()
     }
 } // SelectProtocol
 
 extension CommentViewController: CommenteSelectModelProtocol{
     func CommentImageDownloaded(items: NSMutableArray) {
-        commentImageArray = items as! NSMutableArray
-        self.tbComment.reloadData()
+        commentImageArray = items
+//        self.tbComment.reloadData()
     }
     
     

@@ -14,11 +14,12 @@ protocol CommenteSelectModelProtocol{
 
 class CommentImageSelectModel{
     var delegate: CommenteSelectModelProtocol!
-    var urlPath = "http://\(myURL):8080/dogtor/comment_Image_Select.jsp"
+    var urlPath = "http://\(Share.myURL):8080/dogtor/comment_Image_Select.jsp"
     
-    func getCommentImage(cNickName: String){
+    func getCommentImage(cNickName: String, complation: @escaping (String?) -> (Void)){
         let urlAdd = "?nickName=\(cNickName)"
         urlPath = urlPath + urlAdd
+        print("commentImagePath : \(urlPath)")
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
@@ -33,13 +34,16 @@ class CommentImageSelectModel{
                 print("Failed to download data")
             } else {
                 print("Data is download")
-                self.parseJSON(data!)
-            }
+                let image = self.parseJSON(data!)
+                complation(image.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            )}
         }
         task.resume()
     }//feedDownloaded
     
-    func parseJSON(_ data: Data){
+    func parseJSON(_ data: Data) -> String {
+        print("CommentImageParse")
         if let returnData = String(data: data, encoding: .utf8) {
             print(returnData)
         } else {
@@ -68,8 +72,11 @@ class CommentImageSelectModel{
                 let dto = CommentImageModel(email: email, api: api, imagePath: imagePath, nickName: nickName)
                 dto.printAll()
                 locations.add(dto)
+                
+                return imagePath
             }
         }
+        return "none"
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.CommentImageDownloaded(items: locations)
         })
