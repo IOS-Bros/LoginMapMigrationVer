@@ -18,7 +18,7 @@ class CheckLoginModel : NSObject {
     
     
     func checkUser(_ email : String) {
-        let urlPath = "http://\(myURL):8080/dogtor/check_user.jsp?email=\(email)"
+        let urlPath = "http://\(Share.myURL):8080/dogtor/check_user.jsp?email=\(email)"
         print(urlPath)
         let url : URL = URL(string: urlPath)!
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
