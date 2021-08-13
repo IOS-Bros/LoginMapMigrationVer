@@ -8,7 +8,7 @@
 import Foundation
 
 class Share {
-    static let myURL = "172.20.10.10"
+    static let myURL = "192.169.0.12"
     static var userEmail : String = "0"
     static var userNickName : String = ""
     static var userImage : URL?

@@ -73,6 +73,7 @@ class FeedViewContoroller: UIViewController {
     }
     @objc func updateUI(refresh: UIRefreshControl) {
         refresh.endRefreshing()
+        tableDataLoad(nil)
         feedListTableView.reloadData()
     }
     
@@ -202,7 +203,6 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
                 if imageName.contains("http") {
                     imagePath = imageName
                 } else {
-                    
                     imagePath = Common.writerImagePath + imageName
                 }
                 print("writer image full path : \(imagePath)")
