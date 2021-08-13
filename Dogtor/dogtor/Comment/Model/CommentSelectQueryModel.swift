@@ -35,6 +35,13 @@ class CommentSelectModel{
     }
     
     func parseJson(_ data: Data){
+        if let returnData = String(data: data, encoding: .utf8) {
+            print(returnData)
+        } else {
+            print("data is empty")
+            
+        }
+        print(" ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^")
         var jsonResult = NSArray()
         
         do{

@@ -113,6 +113,7 @@ class FeedViewContoroller: UIViewController {
             let fNo = cell.feedModel?.fNo
             let goComment = segue.destination as! CommentViewController
             goComment.receiveFNo(fNo: fNo!)
+            print("@ @ @ @ @ @ @ @ @ @ @ @ \n \(fNo!)")
             
         }
     }
