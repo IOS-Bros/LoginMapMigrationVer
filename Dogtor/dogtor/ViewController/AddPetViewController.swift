@@ -125,7 +125,7 @@ class AddPetViewController: UIViewController {
         
         let newPetInsertModel = NewPetInsertModel()
         //        \(Share.userEmail) 수정해줘야함!!!!!
-        newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: "ohyj0906@gmail.com", completionHandler: {_,_ in
+        newPetInsertModel.uploadImageFile(at: imageURL!, petName: petName!, petAge: petAge!, petSpecies: petSpecies!, petGender: petGender!, userId: Share.userEmail, completionHandler: {_,_ in
                 print("Upload Success")
         })
         let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
