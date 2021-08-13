@@ -53,7 +53,7 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        \(Share.userEmail) 수정해줘야함!!!!!
-        getPetInfo("ohyj0906@gmail.com")
+        getPetInfo(Share.userEmail)
     }
     
     func getPetInfo(_ email: String){
