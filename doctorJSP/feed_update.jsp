@@ -7,7 +7,7 @@
 
 <%
 
-	String savePath = "/Library/Tomcat/webapps/ROOT/dogtor/feedImage/";
+	String savePath = "/Library/Tomcat/webapps/ROOT/dogtorYJ2/feedImage/";
 	int sizeLimit = 10 * 1024 * 1024;
 
 	MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "UTF-8");
@@ -21,7 +21,7 @@
   int recentlyID = 0;
 
 	// DB
-	String url_mysql = "jdbc:mysql://localhost/dogtorYJ2?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
+	String url_mysql = "jdbc:mysql://localhost/dogtor_tmep?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
 	String id_mysql = "root";
 	String pw_mysql = "qwer1234";
 
