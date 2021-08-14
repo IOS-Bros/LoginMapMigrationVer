@@ -57,7 +57,13 @@ class CommentViewController: UIViewController, UITextViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(CommentViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
+        
+        
     } // ViewDidLoad
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,7 +143,7 @@ class CommentViewController: UIViewController, UITextViewDelegate {
             self.view.frame.origin.y = 0 - keyboardSize.height // 키보드 높이만큼 뷰를 위로 올린다.
             scrollView.frame.size.height = 780
             tbComment.frame.size.height = 727
-            scrollView.isScrollEnabled = false
+            scrollView.isScrollEnabled = true
         tvAddComment.frame.size.height = 70
     }
       
@@ -145,8 +151,8 @@ class CommentViewController: UIViewController, UITextViewDelegate {
           // move back the root view origin to zero
             self.view.frame.origin.y = 0
             tbComment.frame.size.height = 670
-        tvAddComment.frame.size.height = 35
-            
+            tvAddComment.frame.size.height = 35
+            scrollView.isScrollEnabled = false
             if let newFrame = (notification.userInfo?[ UIResponder.keyboardFrameEndUserInfoKey ] as? NSValue)?.cgRectValue {
                 let insets = UIEdgeInsets( top: 0, left: 0, bottom: 0, right: 0 )
                     tbComment.scrollIndicatorInsets = insets
@@ -346,7 +352,7 @@ extension UIView{
         let newView = UIView()
         self.addSubview(newView)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.sizeToFit()
+//        self.sizeToFit()
     }
 }
 
@@ -375,4 +381,3 @@ extension CommentViewController : CommentInsertProtocol{
 
     }
 } // InsertProtocol
-
